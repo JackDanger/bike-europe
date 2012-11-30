@@ -8,7 +8,6 @@ public enum City implements Coordinate {
   Paris    (48.980405, 2.2851849),
   Milan    (45.520543, 9.1419459),
   Frankfurt(50.078848, 8.6349115),
-  Verona   (45.383429, 10.982257),
   Munich   (48.166229, 11.558089),
   Zurich   (47.383444, 8.5254142),
   Tours    (47.413572, 0.6810506),

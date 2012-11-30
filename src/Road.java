@@ -14,7 +14,7 @@ public class Road {
   public final Double distance;
 
   Road(City a, City b) {
-    if(a == b) throw new IllegalArgumentException("Roads have to have two cities");
+    if (a == b) throw new IllegalArgumentException("Roads have to have two cities");
     this.a = a;
     this.b = b;
     this.distance = a.kilometersTo(b);
@@ -29,6 +29,19 @@ public class Road {
     return (a.name().compareTo(b.name()) > 0 ?
             a.name() + ":" + b.name() :
             b.name() + ":" + a.name()).hashCode();
+  }
+
+  public @Override String toString() {
+    return a.name() + " | " + b.name() + " (" + String.format("%.0f", distance) + " km)";
+  }
+
+  public static Road between(City a, City b) {
+    for (Road road : all) {
+      if (   (road.a == a && road.b == b)
+          || (road.a == b && road.b == a) )
+        return road;
+    }
+    throw new RuntimeException("There is no road between" + a.name() + " and " + b.name());
   }
 
   static {
@@ -53,11 +66,5 @@ public class Road {
     all.add(new Road(City.Torino,    City.Milan));
     all.add(new Road(City.Torino,    City.Rome));
     all.add(new Road(City.Milan,     City.Rome));
-
-    all.size();
-  }
-
-  public @Override String toString() {
-    return a.name() + " -> " + b.name() + " (" + String.format("%.0f", distance) + " km)";
   }
 }
