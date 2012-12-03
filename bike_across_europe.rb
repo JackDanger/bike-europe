@@ -1,6 +1,6 @@
 module Util
   RADIANS = (180/3.14169);
-  def self.kilometersBetween(lat1, lng1, lat2, lng2)
+  def self.kilometers_between(lat1, lng1, lat2, lng2)
     a1 = lat1 / RADIANS
     a2 = lng1 / RADIANS
     b1 = lat2 / RADIANS
@@ -39,8 +39,8 @@ class City
   Torino    = new('Torino',    45.105321, 7.6451957)
   Rome      = new('Rome',      42.032845, 12.390408)
 
-  def kilometersTo(other)
-    Util.kilometersBetween(lat, lng, other.lat, other.lat)
+  def kilometers_to(other)
+    Util.kilometers_between(lat, lng, other.lat, other.lat)
   end
 
   def roads
@@ -80,7 +80,7 @@ class Road
     raise "Roads must have two cities" if a == b
     @a = a
     @b = b
-    @distance = a.kilometersTo(b)
+    @distance = a.kilometers_to(b)
   end
 
   def the_city_opposite(city)
@@ -156,7 +156,7 @@ class GreedyRandomDepthFirstWithoutLoops2
   end
 end
 
-class GreedyRandomBreadthFirstWithoutLoops3
+class BreadthFirstRandomWithoutLoops3
   attr_reader :visited
   def run
     @visited = Set.new
@@ -184,14 +184,141 @@ class GreedyRandomBreadthFirstWithoutLoops3
   end
 end
 
+class UniformCostSearch4
+  attr_reader :visited
+  def run
+    @visited = Set.new
+    travel
+  end
+
+  class Node
+    attr_accessor :city, :path
+    def initialize(city, path)
+      @city, @path = city, path
+    end
+
+    def cost
+      path.map(&:road).map(&:distance).inject(&:+)
+    end
+  end
+
+  class FakePriorityQueue < BasicObject
+    attr_reader :items
+    def initialize(comparator)
+      @items = []
+      @comparator = comparator
+    end
+
+    def <<(item)
+      items << item
+      sort!
+    end
+
+    def pop
+      items.shift
+    end
+
+    private
+
+    def sort!
+      @items = items.sort_by &@comparator
+    end
+
+    def method_missing(name, *args, &block)
+      items.send name, *args, &block
+    end
+  end
+
+  def travel
+    frontier = FakePriorityQueue.new :cost
+    frontier << Node.new(Start, [])
+    while frontier.any?
+      node = frontier.pop
+      return node.path if node.city == End
+      visited << node.city
+      node.city.adjacent_cities.shuffle.each do |adjacent|
+        ride = Ride.new(node.city, adjacent)
+        frontier << Node.new(adjacent, node.path + [ride]) unless visited.include? adjacent
+      end
+    end
+  end
+end
+
+class AStarSearch5
+  attr_reader :visited
+  def run
+    @visited = Set.new
+    travel
+  end
+
+  class Node
+    attr_accessor :city, :path
+    def initialize(city, path)
+      @city, @path = city, path
+    end
+
+    def cost
+      g = path.empty? ? 0 : path.map(&:road).map(&:distance).inject(&:+)
+      g + kilometers_to_goal
+    end
+
+    def kilometers_to_goal
+      city.kilometers_to End
+    end
+  end
+
+  class FakePriorityQueue < BasicObject
+    attr_reader :items
+    def initialize(comparator)
+      @items = []
+      @comparator = comparator
+    end
+
+    def <<(item)
+      items << item
+      sort!
+    end
+
+    def pop
+      items.shift
+    end
+
+    private
+
+    def sort!
+      items.first.cost
+      @items = items.sort_by &@comparator
+    end
+
+    def method_missing(name, *args, &block)
+      items.send name, *args, &block
+    end
+  end
+
+  def travel
+    frontier = FakePriorityQueue.new :cost
+    frontier << Node.new(Start, [])
+    while frontier.any?
+      node = frontier.pop
+      return node.path if node.city == End
+      visited << node.city
+      node.city.adjacent_cities.shuffle.each do |adjacent|
+        ride = Ride.new(node.city, adjacent)
+        frontier << Node.new(adjacent, node.path + [ride]) unless visited.include? adjacent
+      end
+    end
+  end
+end
 
 #result = GreedyRandomDepthFirstWithLoops1.new.run
 #result = GreedyRandomDepthFirstWithoutLoops2.new.run
-result = GreedyRandomBreadthFirstWithoutLoops3.new.run
-
+#result = BreadthFirstRandomWithoutLoops3.new.run
+#result = UniformCostSearch4.new.run
+result = AStarSearch5.new.run
 
 
 result.each {|ride| puts ride }
 print "arrived in #{result.size} steps "
 print "(#{"%.0f" % result.map(&:road).map(&:distance).inject(&:+)} km)"
+puts ""
 puts ""
