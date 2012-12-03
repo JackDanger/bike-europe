@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA. User: jackdanger Date: 11/27/12 Time: 7:23 PM To change this template
  * use File | Settings | File Templates.
@@ -35,5 +38,21 @@ public enum City implements Coordinate {
 
   public Double kilometersTo(Coordinate other) {
     return Util.kilometersBetween(lat, lng, other.getLat(), other.getLng());
+  }
+
+  public List<City> adjacentCities() {
+    List<City> cities = new ArrayList<City>();
+    for (Road road : roads())
+      cities.add(road.a == this ? road.b : road.a);
+    return cities;
+  }
+
+  public List<Road> roads() {
+    List<Road> roads = new ArrayList<Road>();
+    for (Road road : Road.all) {
+      if (road.a == this || road.b == this)
+        roads.add(road);
+    }
+    return roads;
   }
 }

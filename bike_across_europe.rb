@@ -1,5 +1,5 @@
 module Util
-  RADIANS = (180/3.14169);
+  RADIANS = 180/3.14169
   def self.kilometers_between(lat1, lng1, lat2, lng2)
     a1 = lat1 / RADIANS
     a2 = lng1 / RADIANS
@@ -40,7 +40,7 @@ class City
   Rome      = new('Rome',      42.032845, 12.390408)
 
   def kilometers_to(other)
-    Util.kilometers_between(lat, lng, other.lat, other.lat)
+    Util.kilometers_between(lat, lng, other.lat, other.lng)
   end
 
   def roads
@@ -147,7 +147,7 @@ class GreedyRandomDepthFirstWithoutLoops2
   def travel(city, path = [])
     visited << city
     return path if city == End
-    city.adjacent_cities.reject {|c| visited.include?(c) }.each do |next_city|
+    city.adjacent_cities.reject {|c| visited.include?(c) }.shuffle.each do |next_city|
       if result = travel(next_city, path + [Ride.new(city, next_city)])
         return result
       end
@@ -198,7 +198,7 @@ class UniformCostSearch4
     end
 
     def cost
-      path.map(&:road).map(&:distance).inject(&:+)
+      path.map(&:road).map(&:distance).inject(&:+) || 0
     end
   end
 
@@ -258,7 +258,7 @@ class AStarSearch5
     end
 
     def cost
-      g = path.empty? ? 0 : path.map(&:road).map(&:distance).inject(&:+)
+      g = path.map(&:road).map(&:distance).inject(&:+) || 0
       g + kilometers_to_goal
     end
 
@@ -310,15 +310,19 @@ class AStarSearch5
   end
 end
 
-#result = GreedyRandomDepthFirstWithLoops1.new.run
-#result = GreedyRandomDepthFirstWithoutLoops2.new.run
-#result = BreadthFirstRandomWithoutLoops3.new.run
-#result = UniformCostSearch4.new.run
-result = AStarSearch5.new.run
 
+[ GreedyRandomDepthFirstWithLoops1,
+  GreedyRandomDepthFirstWithoutLoops2,
+  BreadthFirstRandomWithoutLoops3,
+  UniformCostSearch4,
+  AStarSearch5 ].each do |attempt|
 
-result.each {|ride| puts ride }
-print "arrived in #{result.size} steps "
-print "(#{"%.0f" % result.map(&:road).map(&:distance).inject(&:+)} km)"
-puts ""
-puts ""
+  puts attempt
+  result = attempt.new.run
+
+  result.each {|ride| puts ride }
+  print "arrived in #{result.size} steps "
+  print "(#{"%.0f" % result.map(&:road).map(&:distance).inject(&:+)} km)"
+  puts ""
+  puts ""
+end
