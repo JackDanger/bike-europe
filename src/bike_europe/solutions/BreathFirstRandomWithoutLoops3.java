@@ -1,18 +1,14 @@
+package bike_europe.solutions;
+
+import bike_europe.*;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.PriorityQueue;
 import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA. User: jackdanger Date: 12/3/12 Time: 12:41 AM To change this template
- * use File | Settings | File Templates.
- */
-public class AStarSearch5 {
+public class BreathFirstRandomWithoutLoops3 {
 
   private Set<City> visited;
-  private PriorityQueue<Node> frontier;
 
   private class Node {
     public final City city;
@@ -22,42 +18,19 @@ public class AStarSearch5 {
       this.city = city;
       this.path = path;
     }
-
-    public int cost() {
-      return h() + g();
-    }
-    private int h() {
-      return (int) Math.round(city.kilometersTo(BikeAcrossEurope.end));
-    }
-    private int g() {
-      int cost = 0;
-      for (Ride ride : path) {
-        cost += ride.road.distance;
-      }
-      return cost;
-    }
-    @Override public String toString() {
-      return city + " (" + cost() + ", " + path.size() + ")";
-    }
   }
-
-  private final static Comparator<Node> COST_COMPARATOR = new Comparator<Node>() {
-    public int compare(Node node, Node node1) {
-      return node.cost() - node1.cost();
-    }
-  };
 
   public List<Ride> run(){
     this.visited = new HashSet<City>();
-    this.frontier = new PriorityQueue<Node>(1, COST_COMPARATOR);
     return travel();
   }
 
   public List<Ride> travel() {
+    List<Node> frontier = new ArrayList<Node>();
     frontier.add(new Node(BikeAcrossEurope.start, new ArrayList<Ride>()));
 
     while (!frontier.isEmpty()) {
-      Node node = frontier.poll();
+      Node node = frontier.remove(0);
       if (node.city == BikeAcrossEurope.end)
         return node.path;
 
@@ -73,6 +46,6 @@ public class AStarSearch5 {
         }
       }
     }
-    return frontier.peek().path; // should never get here
+    return frontier.get(0).path; // should never get here
   }
 }

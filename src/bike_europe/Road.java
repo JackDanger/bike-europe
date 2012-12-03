@@ -1,10 +1,8 @@
+package bike_europe;
+
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA. User: jackdanger Date: 11/27/12 Time: 8:39 PM To change this template
- * use File | Settings | File Templates.
- */
 public class Road {
 
   public static Set<Road> all = new HashSet<Road>() {};

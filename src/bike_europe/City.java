@@ -1,10 +1,8 @@
+package bike_europe;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA. User: jackdanger Date: 11/27/12 Time: 7:23 PM To change this template
- * use File | Settings | File Templates.
- */
 public enum City implements Coordinate {
 
   Berlin   (52.482668, 13.359275),

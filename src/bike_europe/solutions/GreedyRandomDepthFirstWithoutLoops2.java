@@ -1,12 +1,12 @@
+package bike_europe.solutions;
+
+import bike_europe.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA. User: jackdanger Date: 12/2/12 Time: 11:11 PM To change this template
- * use File | Settings | File Templates.
- */
+
 public class GreedyRandomDepthFirstWithoutLoops2 {
 
   private Set<City> visited;

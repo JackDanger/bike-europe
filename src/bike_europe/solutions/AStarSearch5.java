@@ -1,3 +1,6 @@
+package bike_europe.solutions;
+
+import bike_europe.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -5,11 +8,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA. User: jackdanger Date: 12/3/12 Time: 12:23 AM To change this template
- * use File | Settings | File Templates.
- */
-public class UniformCostSearch4 {
+public class AStarSearch5 {
 
   private Set<City> visited;
   private PriorityQueue<Node> frontier;
@@ -24,6 +23,12 @@ public class UniformCostSearch4 {
     }
 
     public int cost() {
+      return h() + g();
+    }
+    private int h() {
+      return (int) Math.round(city.kilometersTo(BikeAcrossEurope.end));
+    }
+    private int g() {
       int cost = 0;
       for (Ride ride : path) {
         cost += ride.road.distance;

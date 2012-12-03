@@ -1,3 +1,5 @@
+package bike_europe;
+
 public class Util {
   private static Double RADIANS = (180/3.14169);
 
