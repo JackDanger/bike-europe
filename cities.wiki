@@ -1,0 +1,897 @@
+|1|| | [[London]] ||8,174,100<ref>{{cite web|title=Census result shows increase in population of London as it tops 8 million|url=http://www.ons.gov.uk/ons/rel/mro/news-release/census-result-shows-increase-in-population-of-london-as-it-tops-8-million/censuslondonnr0712.html |date=2012-07-16 |accessdate=2012-11-16}}</ref>|| style="text-align:left;"| {{UK}}
+|-
+|2|| | [[Berlin]] ||3,468,939<ref>[http://www.statistik-berlin-brandenburg.de//Publikationen/OTab/2012/OT_A01-01-00_124_201111_BE.pdf Bevölkerungsstand in Berlin am 30. November 2011 nach Bezirken] (in German)</ref>|| style="text-align:left;"| {{GER}}
+|-
+|3|| | [[Madrid]] ||3,213,271<ref>{{cite web|url=http://www.ine.es/jaxi/menu.do?type=pcaxis&path=%2Ft20%2Fe260&file=inebase&L= |title=Instituto Nacional de Estadística. (National Statistics Institute) |publisher=Ine.es |date= |accessdate=2011-08-19}}</ref>|| style="text-align:left;"| {{ESP}}
+|-
+|4|| | [[Rome]] ||2,546,804{{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ITA}}
+|-
+|5|| | [[Paris]] ||2,125,246{{Citation needed|date=June 2010}}|| style="text-align:left;"| {{FRA}}
+|-
+|6|| | [[Bucharest]] ||1,944,367<ref name="INSSE1">{{Cite document|url = http://www.insse.ro/cms/rw/resource/populatia%20stabila%20la%201%20ianuarie%202009%20si%2018.xls?download=true | title = Romanian cities population at 1.01.2009 | date = 19 May 2009 | publisher=Romanian National Institute of Statistics | accessdate = 23 June 2010|last=ro|postscript = <!--None-->}}</ref> || style="text-align:left;"| {{ROU}}
+|-
+|7|| | [[Hamburg]] ||1,802,041<ref>Statistisches Amt für Hamburg und Schleswig-Holstein: [http://www.statistik-nord.de/daten/bevoelkerung-und-gebiet/monatszahlen/ Die Bevölkerungsentwicklung in Hamburg und Schleswig-Holstein 22. Juli 2012] (German)</ref> || style="text-align:left;"| {{GER}}
+|-
+|8|| | [[Budapest]] ||1,733,685 <ref>  Portal.ksh: [portal.ksh.hu/pls/ksh/docs/hun/hnk/Helysegnevkonyv_adattar_2011.xls Budapest 2011 ( Hungarian)</ref> || style="text-align:left;"| {{HUN}}
+|-
+|9|| | [[Vienna]] ||1,731,236 <ref> Statistik Austria:[http://www.statistik.at/web_de/statistiken/bevoelkerung/bevoelkerungsstruktur/bevoelkerung_nach_staatsangehoerigkeit_geburtsland/023444.html Bevölkerung zu Jahresbeginn 2012(Deutsch)</ref> || style="text-align:left;"| {{AUT}}
+|-
+|10|| | [[Warsaw]] ||1 700 612 <ref> Główny Urząd Statystyczny: [http://www.stat.gov.pl/gus/5840_13169_PLK_HTML.htm Ludność w miastach. Stan w dniu 31 marca 2011 roku](Polish)</ref>|| style="text-align:left;"| {{POL}}
+|-
+|11|| | [[Barcelona]] ||1,605,602{{Citation needed|date=June 2010}} || style="text-align:left;"| {{ESP}}
+|-
+|12|| | [[Munich]] ||1,353,186<ref name="Bayern">Bayerisches Landesamt für Statistik und Datenverarbeitung: [https://www.statistikdaten.bayern.de/genesis/online?language=de&sequenz=tabelleErgebnis&selectionname=12411-009r&sachmerkmal=QUASTI&sachschluessel=SQUART04&startjahr=2010&endjahr=2010 Fortschreibung des Bevölkerungsstandes] (German)</ref>|| style="text-align:left;"| {{GER}}
+|-
+|13|| | [[Prague]] ||1,285,995 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{CZE}}
+|-
+|14|| | [[Milan]] ||1,256,211 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ITA}}
+|-
+|15|| | [[Sofia]] ||1,202,761 <ref>http://www.nsi.bg/EPDOCS/Census2011final.pdf</ref>|| style="text-align:left;"| {{BGR}}
+|-
+|16|| | [[Copenhagen]] ||1,145,804 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{DEN}}
+|-
+|17|| | [[Cologne]] ||1,007,119<ref>[http://www.it.nrw.de/statistik/a/daten/amtlichebevoelkerungszahlen/index.html Amtliche Bevölkerungszahlen] (in German). Landesbetrieb Information und Technik NRW.</ref>|| style="text-align:left;"| {{GER}}
+|-
+|18|| | [[Brussels]] ||1,006,749 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{BEL}}
+|-
+|19|| | [[Birmingham]] ||1,073,000<ref name="English Census">{{English district population citation}}</ref>|| style="text-align:left;"| {{UK}}
+|-
+|20|| | [[Naples]] ||1,004,500 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ITA}}
+|-
+|21|| | [[Torino]] ||865,263 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ITA}}
+|-
+|22|| | [[Valencia, Spain|Valencia]] ||805,304 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ESP}}
+|-
+|23|| | [[Marseille]] ||798,430 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{FRA}}
+|-
+|24|| | [[Stockholm]] ||792,593 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{SWE}}
+|-
+|25|| | [[Kraków]] ||757 611 <ref> Główny Urząd Statystyczny: [http://www.stat.gov.pl/gus/5840_13169_PLK_HTML.htm Ludność w miastach. Stan w dniu 31 marca 2011 roku](Polish)</ref>|| style="text-align:left;"| {{POL}}
+|-
+|26|| | [[Amsterdam]] ||743,104 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{NED}}
+|-
+|27|| | [[Riga]] ||735,241 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{LAT}}
+|-
+|28|| | [[Łódź]] ||728 892 <ref> Główny Urząd Statystyczny: [http://www.stat.gov.pl/gus/5840_13169_PLK_HTML.htm Ludność w miastach. Stan w dniu 31 marca 2011 roku](Polish)</ref>|| style="text-align:left;"| {{POL}}
+|-
+|29|| | [[Athens]] ||720,979 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{GRE}}
+|-
+|30|| | [[Seville]] ||704,114 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ESP}}
+|-
+|31|| | [[Palermo]] ||686,722 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ITA}}
+|-
+|32|| | [[Frankfurt]] ||651,899 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{GER}}
+|-
+|33|| | [[Wrocław]] ||630131<ref> Główny Urząd Statystyczny: [http://www.stat.gov.pl/gus/5840_13169_PLK_HTML.htm Ludność w miastach. Stan w dniu 31 marca 2011 roku](Polish)</ref>|| style="text-align:left;"| {{POL}}
+|-
+|34|| | [[Zaragoza]] ||620,419 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ESP}}
+|-
+|35|| | [[Genoa]] ||610,307 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ITA}}
+|-
+|36|| | [[Stuttgart]] ||602,056<ref>Statistisches Landesamt Baden-Württemberg: [http://www.statistik.baden-wuerttemberg.de/Veroeffentl/Statistische_Berichte/3122_10001.pdf Bevölkerung der Gemeinden Baden-Württembergs am 30. Juni 2010] (German)</ref>|| style="text-align:left;"| {{GER}}
+|-
+|37|| | [[Helsinki]] ||596,661<ref name="autogenerated1">[http://vrk.fi/default.aspx?docid=5953&site=3&id=0 KUNTIEN ASUKASLUVUT SUURUUSJÄRJESTYKSESSÄ] (Finnish)</ref>|| style="text-align:left;"| {{FIN}}
+|-
+|38|| | [[Glasgow]] ||588,470 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{UK}}
+|-
+|39|| | [[Düsseldorf]] ||586,564<ref name="IT.NRW">Landesbetrieb Information und Technik Nordrhein-Westfalen: [http://www.it.nrw.de/statistik/a/daten/amtlichebevoelkerungszahlen/rp1_juni10.html Bevölkerung im Regierungsbezirk Düsseldorf zum 30. Juni 2010] (German)</ref> || style="text-align:left;"| {{GER}}
+|-
+|40|| | [[Dortmund]] ||580,688<ref name="IT.NRW" /> || style="text-align:left;"| {{GER}}
+|-
+|41|| | [[Essen]] ||575,027<ref name="IT.NRW" /> || style="text-align:left;"| {{GER}}
+|-
+|42|| | [[Poznań]] ||573,003 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{POL}}
+|-
+|43|| | [[Bremen]] ||546,852 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{GER}}
+|-
+|44|| | [[Vilnius]] ||540,318 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{LTU}}
+|-
+|45|| | [[Rotterdam]] ||539,960 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{NED}}
+|-
+|46|| | [[Málaga]] ||535,686 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{ESP}}
+|-
+|47|| | [[Dublin]] ||525,383<ref>{{cite web|url=http://www.cso.ie/census/documents/Prelim%20complete.pdf|title=CSO |publisher=Cso.ie |date= |accessdate=2011-07-11}}</ref>|| style="text-align:left;"| {{IRL}}
+|-
+|48|| | [[Dresden]] ||523,058<ref name="Sachsen">Statistisches Landesamt des Freistaates Sachsen: [http://www.statistik.sachsen.de/download/010_GB-Bev/Bev_Gemeinde.pdf Bevölkerung des Freistaates Sachsen jeweils am Monatsende ausgewählter Berichtsmonate nach  Gemeinden] (German)</ref> || style="text-align:left;"| {{GER}}
+|-
+|49|| | [[Leipzig]] ||522,883<ref name="Sachsen" /> || style="text-align:left;"| {{GER}}
+|-
+|50|| | [[Hanover]] ||515,729 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{GER}}
+|-
+|51|| | [[Lisbon]] ||508,209 <ref>{{cite web|url=http://www.cso.ie/census/documents/Prelim%20complete.pdf |title=Preliminary Results - Census |format=PDF |date=2011-06-29|accessdate=2011-08-19}}</ref>|| style="text-align:left;"| {{POR}}
+|-
+|52|| | [[Gothenburg]] ||506,083 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{SWE}}
+|-
+|53|| | [[Nuremberg]] ||505,664<ref name="Bayern" /> || style="text-align:left;"| {{GER}}
+|-
+|54|| | [[Manchester]] ||498,269|| style="text-align:left;"| {{UK}}
+|-
+|55|| | [[Duisburg]] ||490,322<ref name="IT.NRW" /> || style="text-align:left;"| {{GER}}
+|-
+|56|| | [[The Hague|Den Haag]] ||475,630 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{NED}}
+|-
+|57|| | [[Liverpool]] ||469,017 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{UK}}
+|-
+|58|| | [[Gdańsk]] ||460,524 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{POL}}
+|-
+|59|| | [[Antwerp]] ||457,749 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{BEL}}
+|-
+|60|| | [[Edinburgh]] ||448,624 {{Citation needed|date=June 2010}}|| style="text-align:left;"| {{UK}}
+|-
+|61|| | [[Lyon]] ||445,452|| style="text-align:left;"| {{FRA}}
+|-
+|62|| | [[Leeds]] ||443,247|| style="text-align:left;"| {{UK}}
+|-
+|63|| | [[Sheffield]] ||439,866|| style="text-align:left;"| {{UK}}
+|-
+|64|| | [[Bratislava]] ||431,061 <ref name=SK>http://app.statistics.sk/mosmis/sk/run.html Mestská a obecná štatistika</ref>|| style="text-align:left;"| {{SVK}}
+|-
+|65|| | [[Bristol]] ||420,556|| style="text-align:left;"| {{UK}}
+|-
+|66|| | [[Szczecin]] ||413,294|| style="text-align:left;"| {{POL}}
+|-
+|67|| | [[Brno]] ||405,337|| style="text-align:left;"| {{CZE}}
+|-
+|-
+|68|| | [[Tallinn]] ||396,193|| style="text-align:left;"| {{EST}}
+|-
+|69|| | [[Toulouse]] ||390,350|| style="text-align:left;"| {{FRA}}
+|-
+|70|| | [[Bochum]] ||385,626|| style="text-align:left;"| {{GER}}
+|-
+|71|| | [[Murcia]] ||377,888|| style="text-align:left;"| {{ESP}}
+|-
+|72|| | [[Bologna]] ||371,217|| style="text-align:left;"| {{ITA}}
+|-
+|73|| | [[Bydgoszcz]] ||369,151|| style="text-align:left;"| {{POL}}
+|-
+|74|| | [[Kaunas]] ||361,274|| style="text-align:left;"| {{LTU}}
+|-
+|75|| | [[Wuppertal]] ||359,237|| style="text-align:left;"| {{GER}}
+|-
+|76|| | [[Palma de Mallorca]] ||358,462|| style="text-align:left;"| {{ESP}}
+|-
+|77|| | [[Florence]] ||356,118|| style="text-align:left;"| {{ITA}}
+|-
+|78|| | [[Lublin]] ||355,953|| style="text-align:left;"| {{POL}}
+|-
+|79|| | [[Bilbao]] ||353,950|| style="text-align:left;"| {{ESP}}
+|-
+|80|| | [[Thessaloniki]] ||348,920|| style="text-align:left;"| {{GRE}}
+|-
+|81|| | [[Nice]] ||342,738|| style="text-align:left;"| {{FRA}}
+|-
+|82|| | [[Plovdiv]] ||338,153<ref>http://www.nsi.bg/EPDOCS/Census2011final.pdf</ref>|| style="text-align:left;"| {{BUL}}
+|-
+|83|| | [[Varna]] ||334,870<ref>http://www.nsi.bg/EPDOCS/Census2011final.pdf</ref>|| style="text-align:left;"| {{BUL}}
+|-
+|84|| | [[Alicante]] ||334,329|| style="text-align:left;"| {{ESP}}
+|-
+|84|| | [[Leicester]] ||330,574|| style="text-align:left;"| {{UK}}
+|-
+|85|| | [[Bielefeld]] ||326,925|| style="text-align:left;"| {{GER}}
+|-
+|86|| | [[Katowice]] ||321,616|| style="text-align:left;"| {{POL}}
+|-
+|87|| | [[Valladolid]] ||318,576|| style="text-align:left;"| {{ESP}}
+|-
+|87|| | [[Bari]] ||320,475|| style="text-align:left;"| {{ITA}}
+|-
+|88|| | [[Iaşi]] ||315,649<ref name="INSSE2">{{cite web | url = http://www.agerpres.ro/english/index.php/component/k2/item/173.html | title = Largest Romanian cities in 2009 | date = 2 February 2010 | accessdate = 23 June 2010 | publisher = Agerpres | language = Romanian}}</ref>|| style="text-align:left;"| {{ROU}}
+|-
+|89|| | [[Cardiff]] ||315,474|| style="text-align:left;"| {{UK}}
+|-
+|90|| | [[Córdoba, Spain|Córdoba]] ||314,805|| style="text-align:left;"| {{ESP}}
+|-
+|91|| | [[Ostrava]] ||314,590|| style="text-align:left;"| {{CZE}}
+|-
+|92|| | [[Catania]] ||313,110|| style="text-align:left;"| {{ITA}}
+|-
+|93|| | [[Bonn]] ||312,818|| style="text-align:left;"| {{GER}}
+|-
+|94|| | [[Timişoara]] ||312,113<ref name="INSSE2"/> || style="text-align:left;"| {{ROU}}
+|-
+|95|| | [[Mannheim]] ||307,900|| style="text-align:left;"| {{GER}}
+|-
+|96|| | [[Cluj-Napoca]] ||306,009<ref name="INSSE2"/> || style="text-align:left;"| {{ROU}}
+|-
+|97|| | [[Coventry]] ||303,475|| style="text-align:left;"| {{UK}}
+|-
+|98|| | [[Constanţa]] ||302,040<ref name="INSSE2"/> || style="text-align:left;"| {{ROU}}
+|-
+|99|| | [[Kingston upon Hull]] ||301,416|| style="text-align:left;"| {{UK}}
+|-
+|100|| | [[Craiova]] ||298,643<ref name="INSSE2"/> || style="text-align:left;"| {{ROU}}
+|-
+|101|| | [[Vigo]] ||293,725|| style="text-align:left;"| {{ESP}}
+|-
+|102|| | [[Bradford]] ||293,717|| style="text-align:left;"| {{UK}}
+|-
+|103|| | [[Białystok]] ||291,917|| style="text-align:left;"| {{POL}}
+|-
+|104|| | [[Galaţi]] ||290,733<ref name="INSSE2"/> || style="text-align:left;"| {{ROU}}
+|-
+|105|| | [[Utrecht (city)|Utrecht]] ||288,730|| style="text-align:left;"| {{NED}}
+|-
+|106|| | [[Karlsruhe]] ||285,263|| style="text-align:left;"| {{GER}}
+|-
+|107|| | [[Ljubljana]] ||279,653|| style="text-align:left;"| {{SLO}}
+|-
+|108|| | [[Braşov]] ||278,003<ref name="INSSE2"/> || style="text-align:left;"| {{ROU}}
+|-
+|109|| | [[Belfast]] ||276,459|| style="text-align:left;"| {{IRL}}
+|-
+|110|| | [[Wiesbaden]] ||274,611|| style="text-align:left;"| {{GER}}
+|-
+|111|| | [[Venezia]] ||271,073|| style="text-align:left;"| {{ITA}}
+|-
+|112|| | [[Münster]] ||270,868|| style="text-align:left;"| {{GER}}
+|-
+|113|| | [[Nantes]] ||270,251|| style="text-align:left;"| {{FRA}}
+|-
+|114|| | [[Gijón]] ||270,211|| style="text-align:left;"| {{ESP}}
+|-
+|115|| | [[Gelsenkirchen]] ||268,102|| style="text-align:left;"| {{GER}}
+|-
+|116|| | [[Augsburg]] ||264,708<ref name="Bayern" /> || style="text-align:left;"| {{GER}}
+|-
+|117|| | [[Strasbourg]] ||264,115|| style="text-align:left;"| {{FRA}}
+|-
+|118|| | [[Mönchengladbach]] ||261,444|| style="text-align:left;"| {{GER}}
+|-
+|119|| | [[Stoke-on-Trent]] ||259,252|| style="text-align:left;"| {{UK}}
+|-
+|120|| | [[Aachen]] ||258,208|| style="text-align:left;"| {{GER}}
+|-
+|121|| | [[Malmö]] ||258,020|| style="text-align:left;"| {{SWE}}
+|-
+|122|| | [[Gdynia]] ||253,651|| style="text-align:left;"| {{POL}}
+|-
+|123|| | [[Verona]] ||253,208|| style="text-align:left;"| {{ITA}}
+|-
+|124|| | [[Espoo]] ||252,945<ref name="autogenerated1"/>|| style="text-align:left;"| {{FIN}}
+|-
+|125|| | [[Messina]] ||252,026|| style="text-align:left;"| {{ITA}}
+|-
+|126|| | [[Wolverhampton]] ||251,462|| style="text-align:left;"| {{UK}}
+|-
+|127|| | [[Graz]] ||250,099|| style="text-align:left;"| {{AUT}}
+|-
+|128|| | [[Nottingham]] ||249,584|| style="text-align:left;"| {{UK}}
+|-
+|129|| | [[Częstochowa]] ||248,894|| style="text-align:left;"| {{POL}}
+|-
+|130|| | [[L'Hospitalet]] ||248,150|| style="text-align:left;"| {{ESP}}
+|-
+|131|| | [[Chemnitz]] ||246,587|| style="text-align:left;"| {{GER}}
+|-
+|132|| | [[Braunschweig]] ||245,273|| style="text-align:left;"| {{GER}}
+|-
+|133|| | [[Plymouth]] ||243,795|| style="text-align:left;"| {{UK}}
+|-
+|134|| | [[Porto]] ||242,883|| style="text-align:left;"| {{POR}}
+|-
+|135|| | [[A Coruña]] ||242,458|| style="text-align:left;"| {{ESP}}
+|-
+|136|| | [[Granada]] ||240,522|| style="text-align:left;"| {{ESP}}
+|-
+|137|| | [[Krefeld]] ||237,701|| style="text-align:left;"| {{GER}}
+|-
+|138|| | [[Halle, Saxony-Anhalt|Halle (Saale)]] ||237,198|| style="text-align:left;"| {{GER}}
+|-
+|139|| | [[Kiel]] ||234,433|| style="text-align:left;"| {{GER}}
+|-
+|140|| | [[Southampton]] ||234,224|| style="text-align:left;"| {{UK}}
+|-
+|141|| | [[Košice]] ||233,659<ref name=SK/>|| style="text-align:left;"| {{SVK}}
+|-
+|142|| | [[Reading, Berkshire|Reading]] ||232,662|| style="text-align:left;"| {{UK}}
+|-
+|143|| | [[Ghent]] ||230,951|| style="text-align:left;"| {{BEL}}
+|-
+|144|| | [[Derby]] ||229,407|| style="text-align:left;"| {{UK}}
+|-
+|145|| | [[Sosnowiec]] ||229,207|| style="text-align:left;"| {{POL}}
+|-
+|146|| | [[Magdeburg]] ||229,126|| style="text-align:left;"| {{GER}}
+|-
+|147|| | [[Ploieşti]] ||228,378<ref name="INSSE2"/> || style="text-align:left;"| {{ROU}}
+|-
+|148|| | [[Aarhus|Aarhus]] ||228,123|| style="text-align:left;"| {{DEN}}
+|-
+|149|| | [[Radom]] ||227,944|| style="text-align:left;"| {{POL}}
+|-
+|150|| | [[Vitoria-Gasteiz]] ||227,568|| style="text-align:left;"| {{ESP}}
+|-
+|151|| | [[Swansea]] ||227,180|| style="text-align:left;"| {{UK}}
+|-
+|152|| | [[Montpellier]] ||225,392|| style="text-align:left;"| {{FRA}}
+|-
+|153|| | [[Nicosia]] ||224,473|| style="text-align:left;"| {{CYP}}
+|-
+|154|| | [[Badalona]] ||221,520|| style="text-align:left;"| {{ESP}}
+|-
+|155|| | [[Oberhausen]] ||218,898|| style="text-align:left;"| {{GER}}
+|-
+|156|| | [[Freiburg]] ||215,966|| style="text-align:left;"| {{GER}}
+|-
+|157|| | [[Tampere]] ||215,377<ref name="autogenerated1"/>|| style="text-align:left;"| {{FIN}}
+|-
+|158|| | [[Bordeaux]] ||215,363|| style="text-align:left;"| {{FRA}}
+|-
+|159|| | [[Lille]] [²] ||212,597|| style="text-align:left;"| {{FRA}}
+|-
+|160|| | [[Brăila]] ||211,884<ref name="INSSE2"/> || style="text-align:left;"| {{ROU}}
+|-
+|161|| | [[Trieste]] ||211,184|| style="text-align:left;"| {{ITA}}
+|-
+|162|| | [[Lübeck]] ||210,232|| style="text-align:left;"| {{GER}}
+|-
+|163|| | [[Kielce]] ||209,962|| style="text-align:left;"| {{POL}}
+|-
+|164|| | [[Eindhoven]] ||209,170|| style="text-align:left;"| {{NED}}
+|-
+|165|| | [[Toruń]] ||208,386|| style="text-align:left;"| {{POL}}
+|-
+|166|| | [[Rennes]] ||206,229|| style="text-align:left;"| {{FRA}}
+|-
+|167|| | [[Debrecen]] ||205,100|| style="text-align:left;"| {{HUN}}
+|-
+|168|| | [[Padua]] ||204,870|| style="text-align:left;"| {{ITA}}
+|-
+|169|| | [[Oradea]] ||204,477<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|170|| | [[Vantaa]] ||203,428<ref name="autogenerated1"/>|| style="text-align:left;"| {{FIN}}
+|-
+|171|| | [[Oviedo]] ||202,938|| style="text-align:left;"| {{ESP}}
+|-
+|172|| | [[Erfurt]] ||202,844|| style="text-align:left;"| {{GER}}
+|-
+|173|| | [[Aberdeen]] ||202,370|| style="text-align:left;"| {{UK}}
+|-
+|174|| | [[Taranto]] ||202,033|| style="text-align:left;"| {{ITA}}
+|-
+|175|| | [[Charleroi]] ||201,373|| style="text-align:left;"| {{BEL}}
+|-
+|176|| | [[Gliwice]] ||201,186|| style="text-align:left;"| {{POL}}
+|-
+|177|| | [[Burgas]] ||200,271<ref>http://www.nsi.bg/EPDOCS/Census2011final.pdf</ref>|| style="text-align:left;"| {{BUL}}
+|-
+|178|| | [[Sabadell]] ||200,545|| style="text-align:left;"| {{ESP}}
+|-
+|179|| | [[Terrassa]] ||199,817|| style="text-align:left;"| {{ESP}}
+|-
+|180|| | [[Rostock]] ||199,288|| style="text-align:left;"| {{GER}}
+|-
+|181|| | [[Bytom]] ||199,219|| style="text-align:left;"| {{POL}}
+|-
+|182|| | [[Móstoles]] ||198,819|| style="text-align:left;"| {{ESP}}
+|-
+|183|| | [[Pamplona]] ||198,750|| style="text-align:left;"| {{ESP}}
+|-
+|184|| | [[Hagen]] ||196,934|| style="text-align:left;"| {{GER}}
+|-
+|185|| | [[Dudley]] ||194,919|| style="text-align:left;"| {{UK}}
+|-
+|186|| | [[Kassel]] ||194,427|| style="text-align:left;"| {{GER}}
+|-
+|187|| | [[Mainz]] ||194,372|| style="text-align:left;"| {{GER}}
+|-
+|188|| | [[Almere]] ||193,302|| style="text-align:left;"| {{NED}}
+|-
+|189|| | [[Zabrze]] ||193,212|| style="text-align:left;"| {{POL}}
+|-
+|190|| | [[Le Havre]] ||190,905|| style="text-align:left;"| {{FRA}}
+|-
+|191|| | [[Newcastle upon Tyne]] ||189,863|| style="text-align:left;"| {{UK}}
+|-
+|192|| | [[Northampton]] ||189,474|| style="text-align:left;"| {{UK}}
+|-
+|193|| | [[Linz]] ||188,968|| style="text-align:left;"| {{AUT}}
+|-
+|194|| | [[Cartagena, Spain|Cartagena]] ||188,003|| style="text-align:left;"| {{ESP}}
+|-
+|195|| | [[Brescia]] ||187,567|| style="text-align:left;"| {{ITA}}
+|-
+|196|| | [[Klaipėda]] ||187,442|| style="text-align:left;"| {{LTU}}
+|-
+|197|| | [[Reims]] ||187,206|| style="text-align:left;"| {{FRA}}
+|-
+|198|| | [[Jerez de la Frontera]] ||187,087|| style="text-align:left;"| {{ESP}}
+|-
+|199|| | [[Portsmouth]] ||187,056|| style="text-align:left;"| {{UK}}
+|-
+|200|| | [[Liège (city)]] ||185,574|| style="text-align:left;"| {{BEL}}
+|-
+|201|| | [[Luton]] ||185,543|| style="text-align:left;"| {{UK}}
+|-
+|202|| | [[City of Preston, Lancashire|Preston]] ||184,836|| style="text-align:left;"| {{UK}}
+|-
+|203|| | [[Santander, Cantabria|Santander]] ||184,661|| style="text-align:left;"| {{ESP}}
+|-
+|204|| | [[Milton Keynes]] ||184,506|| style="text-align:left;"| {{UK}}
+|-
+|205|| | [[Hamm]] ||184,239|| style="text-align:left;"| {{GER}}
+|-
+|206|| | [[San Sebastián|Donostia]] ||181,702|| style="text-align:left;"| {{ESP}}
+|-
+|207|| | [[Tilburg]] ||181,210|| style="text-align:left;"| {{NED}}
+|-
+|208|| | [[Miskolc]] ||181,100|| style="text-align:left;"| {{HUN}}
+|-
+|209|| | [[Reggio Calabria]] ||180,353|| style="text-align:left;"| {{ITA}}
+|-
+|210|| | [[Saint-Étienne]] ||180,210|| style="text-align:left;"| {{FRA}}
+|-
+|211|| | [[Amadora]] ||179,937|| style="text-align:left;"| {{POR}}
+|-
+|212|| | [[Fuenlabrada]] ||179,735|| style="text-align:left;"| {{ESP}}
+|-
+|213|| | [[Alcalá de Henares]] ||179,602|| style="text-align:left;"| {{ESP}}
+|-
+|214|| | [[Saarbrücken]] ||178,914|| style="text-align:left;"| {{GER}}
+|-
+|215|| | [[Turku]] ||178,846<ref name="autogenerated1"/>|| style="text-align:left;"| {{FIN}}
+|-
+|216|| | [[Vila Nova de Gaia]] ||178,526|| style="text-align:left;"| {{POR}}
+|-
+|217|| | [[Sunderland, Tyne and Wear|Sunderland]] ||177,739|| style="text-align:left;"| {{UK}}
+|-
+|218|| | [[Bielsko-Biała]] ||177,219|| style="text-align:left;"| {{POL}}
+|-
+|219|| | [[Bacău]] ||177,087<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|220|| | [[Split (city)|Split]] ||176,851|| style="text-align:left;"| {{CRO}}
+|-
+|221|| | [[Modena]] ||175,502|| style="text-align:left;"| {{ITA}}
+|-
+|222|| | [[Leganés]] ||174,436|| style="text-align:left;"| {{ESP}}
+|-
+|223|| | [[Norwich]] ||174,047|| style="text-align:left;"| {{UK}}
+|-
+|224|| | [[Plzeň|Pilsen]] ||173,936|| style="text-align:left;"| {{CZE}}
+|-
+|225|| | [[Olsztyn]] ||173,350|| style="text-align:left;"| {{POL}}
+|-
+|226|| | [[Prato]] ||172,499|| style="text-align:left;"| {{ITA}}
+|-
+|227|| | [[Castellón de la Plana|Castellon de la Plana]] ||172,110|| style="text-align:left;"| {{ESP}}
+|-
+|228|| | [[Walsall]] ||170,994|| style="text-align:left;"| {{UK}}
+|-
+|229|| | [[Herne, Germany|Herne]] ||170,992|| style="text-align:left;"| {{GER}}
+|-
+|230|| | [[Piraeus]] ||170,715|| style="text-align:left;"| {{GRE}}
+|-
+|231|| | [[Braga]] ||170,576|| style="text-align:left;"| {{POR}}
+|-
+|232|| | [[Mülheim]] ||169,917|| style="text-align:left;"| {{GER}}
+|-
+|233|| | [[Burgos]] ||167,962|| style="text-align:left;"| {{ESP}}
+|-
+|234|| | [[Bournemouth]] ||167,527|| style="text-align:left;"| {{UK}}
+|-
+|235|| | [[Piteşti]] ||166,893<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|236|| | [[Arad, Romania|Arad]] ||166,003<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|237|| | [[Groningen (city)|Groningen]] ||184,431|| style="text-align:left;"| {{NED}}
+|-
+|238|| | [[Patras]] ||164,741|| style="text-align:left;"| {{GRE}}
+|-
+|239|| | [[Cagliari]] ||164,249|| style="text-align:left;"| {{ITA}}
+|-
+|240|| | [[Osnabrück]] ||163,814|| style="text-align:left;"| {{GER}}
+|-
+|241|| | [[Solingen]] ||163,581|| style="text-align:left;"| {{GER}}
+|-
+|242|| | [[Parma]] ||163,457|| style="text-align:left;"| {{ITA}}
+|-
+|243|| | [[Ludwigshafen]] ||163,343|| style="text-align:left;"| {{GER}}
+|-
+|244|| | [[Szeged]] ||162,500|| style="text-align:left;"| {{HUN}}
+|-
+|245|| | [[Leverkusen]] ||161,227|| style="text-align:left;"| {{GER}}
+|-
+|246|| | [[Toulon]] ||160,639|| style="text-align:left;"| {{FRA}}
+|-
+|247|| | [[Southend on Sea]] ||160,257|| style="text-align:left;"| {{UK}}
+|-
+|248|| | [[Rzeszów]] ||158,987|| style="text-align:left;"| {{POL}}
+|-
+|249|| | [[Pécs]] ||158,700|| style="text-align:left;"| {{HUN}}
+|-
+|250|| | [[Oldenburg]] ||158,565|| style="text-align:left;"| {{GER}}
+|-
+|251|| | [[Odense]] ||158,453|| style="text-align:left;"| {{DEN}}
+|-
+|252|| | [[Getafe]] ||156,320|| style="text-align:left;"| {{ESP}}
+|-
+|253|| | [[Livorno]] ||156,274|| style="text-align:left;"| {{ITA}}
+|-
+|254|| | [[Salamanca]] ||156,006|| style="text-align:left;"| {{ESP}}
+|-
+|255|| | [[Swindon]] ||155,432|| style="text-align:left;"| {{UK}}
+|-
+|256|| | [[Foggia]] ||155,203|| style="text-align:left;"| {{ITA}}
+|-
+|257|| | [[Sibiu]] ||154,548<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|258|| | [[Grenoble]] ||153,317|| style="text-align:left;"| {{FRA}}
+|-
+|259|| | [[Neuss]] ||151,610|| style="text-align:left;"| {{GER}}
+|-
+|260|| | [[Angers]] ||151,279|| style="text-align:left;"| {{FRA}}
+|-
+|261|| | [[Nijmegen]] ||151,230|| style="text-align:left;"| {{NED}}
+|-
+|262|| | [[Salzburg]] ||150,269|| style="text-align:left;"| {{AUT}}
+|-
+|263|| | [[Dijon]] ||149,867|| style="text-align:left;"| {{FRA}}
+|-
+|264|| | [[Rousse]] ||149,642<ref>http://www.nsi.bg/EPDOCS/Census2011final.pdf</ref>|| style="text-align:left;"| {{BUL}}
+|-
+|265|| | [[Brest, France|Brest]] ||149,634|| style="text-align:left;"| {{FRA}}
+|-
+|266|| | [[Alcorcón|Alcorcon]] ||149,594|| style="text-align:left;"| {{ESP}}
+|-
+|267|| | [[Perugia]] ||149,125|| style="text-align:left;"| {{ITA}}
+|-
+|268|| | [[Coimbra]] ||148,445|| style="text-align:left;"| {{POR}}
+|-
+|269|| | [[Ruda Śląska]] ||147,838|| style="text-align:left;"| {{POL}}
+|-
+|270|| | [[Potsdam]] ||147,583|| style="text-align:left;"| {{GER}}
+|-
+|271|| | [[Logroño]] ||147,036|| style="text-align:left;"| {{ESP}}
+|-
+|272|| | [[Haarlem]] ||147,020|| style="text-align:left;"| {{NED}}
+|-
+|273|| | [[Huddersfield]] ||146,234|| style="text-align:left;"| {{UK}}
+|-
+|274|| | [[Le Mans]] ||146,105|| style="text-align:left;"| {{FRA}}
+|-
+|275|| | [[Târgu Mureş]] ||145,151<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|276|| | [[Huelva]] ||145,150|| style="text-align:left;"| {{ESP}}
+|-
+|277|| | [[Poole]] ||144,800|| style="text-align:left;"| {{UK}}
+|-
+|278|| | [[Oulu]] ||144,114<ref name="autogenerated1"/>|| style="text-align:left;"| {{FIN}}
+|-
+|279|| | [[Paderborn]] ||143,769|| style="text-align:left;"| {{GER}}
+|-
+|280|| | [[Dundee]] ||143,090|| style="text-align:left;"| {{UK}}
+|-
+|281|| | [[Oxford]] ||143,016|| style="text-align:left;"| {{UK}}
+|-
+|282|| | [[Heidelberg]] ||142,993|| style="text-align:left;"| {{GER}}
+|-
+|283|| | [[Middlesbrough]] ||142,691|| style="text-align:left;"| {{UK}}
+|-
+|284|| | [[Blackpool]] ||142,283|| style="text-align:left;"| {{UK}}
+|-
+|285|| | [[Rybnik]] ||141,975|| style="text-align:left;"| {{POL}}
+|-
+|286|| | [[Reggio Emilia]] ||141,877|| style="text-align:left;"| {{ITA}}
+|-
+|287|| | [[Darmstadt]] ||140,562|| style="text-align:left;"| {{GER}}
+|-
+|288|| | [[Arnhem]] ||140,430|| style="text-align:left;"| {{NED}}
+|-
+|289|| | [[Heraklion]] ||140,357|| style="text-align:left;"| {{GRE}}
+|-
+|290|| | [[Newport]] ||140,100|| style="text-align:left;"| {{UK}}
+|-
+|291|| | [[Rijeka]] ||139,743|| style="text-align:left;"| {{CRO}}
+|-
+|292|| | [[Bolton]] ||139,403|| style="text-align:left;"| {{UK}}
+|-
+|293|| | [[Baia Mare]] ||139,154<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|294|| | [[Ipswich]] ||138,718|| style="text-align:left;"| {{UK}}
+|-
+|295|| | [[Breda]] ||138,650|| style="text-align:left;"| {{NED}}
+|-
+|296|| | [[Stara Zagora]] ||138,272<ref>http://www.nsi.bg/EPDOCS/Census2011final.pdf</ref>|| style="text-align:left;"| {{BUL}}
+|-
+|297|| | [[Telford]] ||138,241|| style="text-align:left;"| {{UK}}
+|-
+|298|| | [[Salerno]] ||138,188|| style="text-align:left;"| {{ITA}}
+|-
+|299|| | [[York]] ||137,505|| style="text-align:left;"| {{UK}}
+|-
+|300|| | [[Peristeri]] ||137,472|| style="text-align:left;"| {{GRE}}
+|-
+|301|| | [[Clermont-Ferrand]] ||137,140|| style="text-align:left;"| {{FRA}}
+|-
+|302|| | [[West Bromwich]] ||136,940|| style="text-align:left;"| {{UK}}
+|-
+|303|| | [[Apeldoorn]] ||136,920|| style="text-align:left;"| {{NED}}
+|-
+|304|| | [[Badajoz]] ||136,851|| style="text-align:left;"| {{ESP}}
+|-
+|305|| | [[Peterborough]] ||136,292|| style="text-align:left;"| {{UK}}
+|-
+|306|| | [[Cádiz]] ||136,236|| style="text-align:left;"| {{ESP}}
+|-
+|307|| | [[Stockport]] ||136,082|| style="text-align:left;"| {{UK}}
+|-
+|308|| | [[León, Spain|Leon]] ||135,794|| style="text-align:left;"| {{ESP}}
+|-
+|309|| | [[Amiens]] ||135,501|| style="text-align:left;"| {{FRA}}
+|-
+|310|| | [[Ravenna]] ||134,631|| style="text-align:left;"| {{ITA}}
+|-
+|311|| | [[Brighton]] ||134,293|| style="text-align:left;"| {{UK}}
+|-
+|312|| | [[Aix-en-Provence]] ||134,222|| style="text-align:left;"| {{FRA}}
+|-
+|313|| | [[Limoges]] ||133,968|| style="text-align:left;"| {{FRA}}
+|-
+|314|| | [[Würzburg]] ||133,906|| style="text-align:left;"| {{GER}}
+|-
+|315|| | [[Nîmes]] ||133,424|| style="text-align:left;"| {{FRA}}
+|-
+|316|| | [[Tours]] ||132,820|| style="text-align:left;"| {{FRA}}
+|-
+|317|| | [[Buzău]] ||132,210<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|318|| | [[Jyväskylä]] ||132,115<ref name="autogenerated1"/>|| style="text-align:left;"| {{FIN}}
+|-
+|319|| | [[Tychy]] ||131,854|| style="text-align:left;"| {{POL}}
+|-
+|320|| | [[Saint-Denis]] ||131,557|| style="text-align:left;"| {{FRA}}
+|-
+|321|| | [[Dąbrowa Górnicza]] ||131,024|| style="text-align:left;"| {{POL}}
+|-
+|322|| | [[Ferrara]] ||130,992|| style="text-align:left;"| {{ITA}}
+|-
+|323|| | [[Enschede]] ||130,960|| style="text-align:left;"| {{NED}}
+|-
+|324|| | [[Larissa]] ||130,946|| style="text-align:left;"| {{GRE}}
+|-
+|325|| | [[Regensburg]] ||129,859|| style="text-align:left;"| {{GER}}
+|-
+|326|| | [[Šiauliai]] ||129,075|| style="text-align:left;"| {{LTU}}
+|-
+|327|| | [[Opole]] ||128,686|| style="text-align:left;"| {{POL}}
+|-
+|328|| | [[Uppsala]] ||128,409|| style="text-align:left;"| {{SWE}}
+|-
+|329|| | [[Győr]] ||128,400|| style="text-align:left;"| {{HUN}}
+|-
+|330|| | [[Wałbrzych]] ||128,201|| style="text-align:left;"| {{POL}}
+|-
+|331|| | [[Płock]] ||127,953|| style="text-align:left;"| {{POL}}
+|-
+|332|| | [[Elbląg]] ||127,732|| style="text-align:left;"| {{POL}}
+|-
+|333|| | [[Slough]] ||126,276|| style="text-align:left;"| {{UK}}
+|-
+|334|| | [[Gorzów Wielkopolski]] ||125,787|| style="text-align:left;"| {{POL}}
+|-
+|335|| | [[Amersfoort]] ||124,550|| style="text-align:left;"| {{NED}}
+|-
+|336|| | [[Villeurbanne]] ||124,215|| style="text-align:left;"| {{FRA}}
+|-
+|337|| | [[Metz]] ||123,776|| style="text-align:left;"| {{FRA}}
+|-
+|338|| | [[Syracuse, Sicily|Siracusa]] ||123,657|| style="text-align:left;"| {{ITA}}
+|-
+|339|| | [[Gloucester]] ||123,205|| style="text-align:left;"| {{UK}}
+|-
+|340|| | [[Göttingen]] ||121,884|| style="text-align:left;"| {{GER}}
+|-
+|341|| | [[Recklinghausen]] ||121,827|| style="text-align:left;"| {{GER}}
+|-
+|342|| | [[Heilbronn]] ||121,613|| style="text-align:left;"| {{GER}}
+|-
+|343|| | [[Aalborg]] ||121,610|| style="text-align:left;"| {{DEN}}
+|-
+|344|| | [[Ingolstadt]] ||121,314|| style="text-align:left;"| {{GER}}
+|-
+|345|| | [[Wolfsburg]] ||121,199|| style="text-align:left;"| {{GER}}
+|-
+|346|| | [[Watford]] ||120,960|| style="text-align:left;"| {{UK}}
+|-
+|347|| | [[Preston]] ||120,729|| style="text-align:left;"| {{UK}}
+|-
+|348|| | [[Agualva-Cacém]] ||120,650|| style="text-align:left;"| {{POR}}
+|-
+|349|| | [[Ulm]] ||120,625|| style="text-align:left;"| {{GER}}
+|-
+|350|| | [[Włocławek]] ||120,440|| style="text-align:left;"| {{POL}}
+|-
+|351|| | [[Monza]] ||120,204|| style="text-align:left;"| {{ITA}}
+|-
+|352|| | [[Offenbach am Main]] ||119,430|| style="text-align:left;"| {{GER}}
+|-
+|353|| | [[Cork (city)|Cork]] ||119,418|| style="text-align:left;"| {{IRL}}
+|-
+|354|| | [[Bottrop]] ||119,356|| style="text-align:left;"| {{GER}}
+|-
+|355|| | [[Maribor]] ||119,071|| style="text-align:left;"| {{SLO}}
+|-
+|356|| | [[Santa Coloma de Gramenet]] ||119,056|| style="text-align:left;"| {{ESP}}
+|-
+|357|| | [[Pforzheim]] ||119,021|| style="text-align:left;"| {{GER}}
+|-
+|358|| | [[Latina]] ||118,946<ref>{{cite web|url=http://www.demo.istat.it/bilmens2010gen/index.html |title=Statistiche demografiche ISTAT |publisher=Demo.istat.it |date= |accessdate=2011-08-19}}</ref>|| style="text-align:left;"| {{ITA}}
+|-
+|359|| | [[Dordrecht]] ||118,820|| style="text-align:left;"| {{NED}}
+|-
+|360|| | [[Mataró]] ||118,748<ref>http://www.nsi.bg/EPDOCS/Census2011final.pdf</ref>|| style="text-align:left;"| {{ESP}}
+|-
+|361|| | [[Zielona Góra]] ||118,707|| style="text-align:left;"| {{POL}}
+|-
+|362|| | [[Tarnów]] ||118,295|| style="text-align:left;"| {{POL}}
+|-
+|363|| | [[Leiden]] ||118,070|| style="text-align:left;"| {{NED}}
+|-
+|364|| | [[Innsbruck]] ||117,916|| style="text-align:left;"| {{AUT}}
+|-
+|365|| | [[Besançon]] ||117,733|| style="text-align:left;"| {{FRA}}
+|-
+|366|| | [[Maastricht]] ||117,340|| style="text-align:left;"| {{NED}}
+|-
+|367|| | [[Bruges]] ||117,327|| style="text-align:left;"| {{BEL}}
+|-
+|368|| | [[Rotherham]] ||117,262|| style="text-align:left;"| {{UK}}
+|-
+|369|| | [[Tarragona]] ||117,184|| style="text-align:left;"| {{ESP}}
+|-
+|370|| | [[Zoetermeer]] ||116,980|| style="text-align:left;"| {{NED}}
+|-
+|371|| | [[Bremerhaven]] ||116,615|| style="text-align:left;"| {{GER}}
+|-
+|372|| | [[Pescara]] ||116,286|| style="text-align:left;"| {{ITA}}
+|-
+|373|| | [[Nyíregyháza]] ||116,200|| style="text-align:left;"| {{HUN}}
+|-
+|374|| | [[Botoşani]] ||116,110<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|375|| | [[Marbella]] ||115,871|| style="text-align:left;"| {{ESP}}
+|-
+|376|| | [[Remscheid]] ||115,864|| style="text-align:left;"| {{GER}}
+|-
+|377|| | [[Panevėžys]] ||115,604|| style="text-align:left;"| {{LTU}}
+|-
+|378|| | [[Chorzów]] ||115,505|| style="text-align:left;"| {{POL}}
+|-
+|379|| | [[Lleida]] ||115,026|| style="text-align:left;"| {{ESP}}
+|-
+|380|| | [[Caen]] ||113,987|| style="text-align:left;"| {{FRA}}
+|-
+|381|| | [[Cambridge]] ||113,442|| style="text-align:left;"| {{UK}}
+|-
+|382|| | [[Fürth]] ||113,422|| style="text-align:left;"| {{GER}}
+|-
+|383|| | [[Bergamo]] ||113,143|| style="text-align:left;"| {{ITA}}
+|-
+|384|| | [[Orléans]] ||113,126|| style="text-align:left;"| {{FRA}}
+|-
+|385|| | [[Jaén, Spain|Jaén]] ||112,921|| style="text-align:left;"| {{ESP}}
+|-
+|386|| | [[Satu Mare]] ||112,705<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|387|| | [[Reutlingen]] ||112,252|| style="text-align:left;"| {{GER}}
+|-
+|388|| | [[Daugavpils]] ||111,231|| style="text-align:left;"| {{LAT}}
+|-
+|389|| | [[Râmnicu Vâlcea]] ||110,901<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|390|| | [[Zwolle]] ||110,660|| style="text-align:left;"| {{NED}}
+|-
+|391|| | [[Mulhouse]] ||110,359|| style="text-align:left;"| {{FRA}}
+|-
+|392|| | [[Ourense]] ||109,011|| style="text-align:left;"| {{ESP}}
+|-
+|393|| | [[Kalisz]] ||108,666|| style="text-align:left;"| {{POL}}
+|-
+|394|| | [[Forlì]] ||108,335|| style="text-align:left;"| {{ITA}}
+|-
+|395|| | [[Salzgitter]] ||107,726|| style="text-align:left;"| {{GER}}
+|-
+|396|| | [[Koszalin]] ||107,702|| style="text-align:left;"| {{POL}}
+|-
+|397|| | [[Moers]] ||107,547|| style="text-align:left;"| {{GER}}
+|-
+|398|| | [[Piatra Neamţ]] ||107,504<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|399|| | [[Vicenza]] ||107,223|| style="text-align:left;"| {{ITA}}
+|-
+|400|| | [[Västerås]] ||107,208|| style="text-align:left;"| {{SWE}}
+|-
+|401|| | [[Pleven]] ||106,954|| style="text-align:left;"| {{BUL}}
+|-
+|402|| | [[Suceava]] ||106,934<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|403|| | [[Exeter]] ||106,772|| style="text-align:left;"| {{UK}}
+|-
+|404|| | [[Namur (city)|Namur]] ||106,767|| style="text-align:left;"| {{BEL}}
+|-
+|405|| | [[Kallithea]] ||106,757|| style="text-align:left;"| {{GRE}}
+|-
+|406|| | [[Algeciras]] ||106,710|| style="text-align:left;"| {{ESP}}
+|-
+|407|| | [[Rouen]] ||106,592|| style="text-align:left;"| {{FRA}}
+|-
+|408|| | [[Eastbourne]] ||106,562|| style="text-align:left;"| {{UK}}
+|-
+|409|| | [[Drobeta-Turnu Severin]] ||106,507<ref name="INSSE1"/> || style="text-align:left;"| {{ROU}}
+|-
+|410|| | [[Koblenz]] ||106,501|| style="text-align:left;"| {{GER}}
+|-
+|411|| | [[Kecskemét]] ||106,500|| style="text-align:left;"| {{HUN}}
+|-
+|412|| | [[Boulogne-Billancourt]] ||106,367|| style="text-align:left;"| {{FRA}}
+|-
+|413|| | [[Siegen]] ||106,293|| style="text-align:left;"| {{GER}}
+|-
+|414|| | [[Legnica]] ||106,254|| style="text-align:left;"| {{POL}}
+|-
+|415|| | [[Bergisch Gladbach]] ||105,761|| style="text-align:left;"| {{GER}}
+|-
+|416|| | [[Sutton Coldfield]] ||105,452|| style="text-align:left;"| {{UK}}
+|-
+|417|| | [[Cottbus]] ||105,309|| style="text-align:left;"| {{GER}}
+|-
+|418|| | [[Liberec]] ||105,229|| style="text-align:left;"| {{CZE}}
+|-
+|419|| | [[Perpignan]] ||105,115|| style="text-align:left;"| {{FRA}}
+|-
+|420|| | [[Blackburn]] ||105,085|| style="text-align:left;"| {{UK}}
+|-
+|421|| | [[Terni]] ||105,018|| style="text-align:left;"| {{ITA}}
+|-
+|422|| | [[Trento]] ||104,946|| style="text-align:left;"| {{ITA}}
+|-
+|423|| | [[Colchester]] ||104,390|| style="text-align:left;"| {{UK}}
+|-
+|424|| | [[Gera]] ||103,948|| style="text-align:left;"| {{GER}}
+|-
+|425|| | [[Nancy, France|Nancy]] ||103,605|| style="text-align:left;"| {{FRA}}
+|-
+|426|| | [[Oldham]] ||103,544|| style="text-align:left;"| {{UK}}
+|-
+|427|| | [[Trier]] ||103,518|| style="text-align:left;"| {{GER}}
+|-
+|428|| | [[Szekesfehervar]] ||103,300|| style="text-align:left;"| {{HUN}}
+|-
+|429|| | [[Dos Hermanas]] ||103,282|| style="text-align:left;"| {{ESP}}
+|-
+|430|| | [[Erlangen]] ||103,197|| style="text-align:left;"| {{GER}}
+|-
+|431|| | [[St Helens, Merseyside|St Helens]] ||102,629|| style="text-align:left;"| {{UK}}
+|-
+|432|| | [[Hildesheim]] ||102,575|| style="text-align:left;"| {{GER}}
+|-
+|433|| | [[Jena]] ||102,532|| style="text-align:left;"| {{GER}}
+|-
+|434|| | [[Lahti]] ||102,383<ref name="autogenerated1"/>|| style="text-align:left;"| {{FIN}}
+|-
+|435|| | [[Olomouc]] ||102,134|| style="text-align:left;"| {{CZE}}
+|-
+|436|| | [[Tartu]] ||101,740|| style="text-align:left;"| {{EST}}
+|-
+|437|| | [['s-Hertogenbosch]] ||101,510|| style="text-align:left;"| {{NED}}
+|-
+|438|| | [[Almada]] ||101,502|| style="text-align:left;"| {{POR}}
+|-
+|439|| | [[Linköping]] ||101,463|| style="text-align:left;"| {{SWE}}
+|-
+|440|| | [[Torrejón de Ardoz]] ||101,056|| style="text-align:left;"| {{ESP}}
+|-
+|441|| | [[Novara]] ||100,910|| style="text-align:left;"| {{ITA}}
+|-
+|442|| | [[Witten]] ||100,793|| style="text-align:left;"| {{GER}}
+|-
+|443|| | [[Crawley]] ||100,547|| style="text-align:left;"| {{UK}}
+|-
+|444|| | [[Ancona]] ||100,507|| style="text-align:left;"| {{ITA}}
+|-
+|445|| | [[Słupsk]] ||100,376|| style="text-align:left;"| {{POL}}
+|-
+|446|| | [[Bolzano]] ||100,024|| style="text-align:left;"| {{ITA}}
+|}
