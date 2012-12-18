@@ -1,6 +1,7 @@
 package bike_europe;
 
 import java.util.List;
+import bike_europe.solutions.*;
 
 public class BikeAcrossEurope {
 
@@ -8,8 +9,12 @@ public class BikeAcrossEurope {
   public static City end   = City.Berlin;
 
   public static void main(String[] args) {
+    List<Ride> path = new GreedyRandomDepthFirstWithLoops1().run();
+    //List<Ride> path = new GreedyRandomDepthFirstWithoutLoops2().run();
+    //List<Ride> path = new BreathFirstRandomWithoutLoops3().run();
+    //List<Ride> path = new UniformCostSearch4().run();
+    //List<Ride> path = new AStarSearch5().run();
 
-    List<Ride> = CreateAListOfRidesBetweenRomeAndBerlin();
 
 
     for (Ride ride : path) { System.out.println(ride); }
