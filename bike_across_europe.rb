@@ -56,19 +56,6 @@ class City
   end
 end
 
-class Ride
-  attr_reader :road, :from, :to
-
-  def initialize(from, to)
-    @from, @to = from, to
-    @road = Road.between(from, to)
-  end
-
-  def to_s
-    "#{from} -> #{to} (#{"%.0f" % road.distance} km)"
-  end
-end
-
 class Road
 
   require 'set'
@@ -133,7 +120,7 @@ class GreedyRandomDepthFirstWithLoops1
   def travel(city, path = [])
     return path if city == End
     next_city = city.adjacent_cities.sample
-    travel(next_city, path + [Ride.new(city, next_city)])
+    travel(next_city, path + [next_city])
   end
 end
 
@@ -148,7 +135,7 @@ class GreedyRandomDepthFirstWithoutLoops2
     visited << city
     return path if city == End
     city.adjacent_cities.reject {|c| visited.include?(c) }.shuffle.each do |next_city|
-      if result = travel(next_city, path + [Ride.new(city, next_city)])
+      if result = travel(next_city, path + [next_city])
         return result
       end
     end
@@ -177,8 +164,7 @@ class BreadthFirstRandomWithoutLoops3
       return node.path if node.city == End
       visited << node.city
       node.city.adjacent_cities.shuffle.each do |adjacent|
-        ride = Ride.new(node.city, adjacent)
-        frontier << Node.new(adjacent, node.path + [ride]) unless visited.include? adjacent
+        frontier << Node.new(adjacent, node.path + [adjacent]) unless visited.include? adjacent
       end
     end
   end
@@ -198,7 +184,13 @@ class UniformCostSearch4
     end
 
     def cost
-      path.map(&:road).map(&:distance).inject(&:+) || 0
+      cost = 0
+      path.each_with_index do |city, idx|
+        if next_city = path[idx+1]
+          cost += Road.between(city, next_city).distance
+        end
+      end
+      cost
     end
   end
 
@@ -237,8 +229,7 @@ class UniformCostSearch4
       return node.path if node.city == End
       visited << node.city
       node.city.adjacent_cities.shuffle.each do |adjacent|
-        ride = Ride.new(node.city, adjacent)
-        frontier << Node.new(adjacent, node.path + [ride]) unless visited.include? adjacent
+        frontier << Node.new(adjacent, node.path + [adjacent]) unless visited.include? adjacent
       end
     end
   end
@@ -258,8 +249,13 @@ class AStarSearch5
     end
 
     def cost
-      g = path.map(&:road).map(&:distance).inject(&:+) || 0
-      g + kilometers_to_goal
+      cost = 0
+      path.each_with_index do |city, idx|
+        if next_city = path[idx+1]
+          cost += Road.between(city, next_city).distance
+        end
+      end
+      cost + kilometers_to_goal
     end
 
     def kilometers_to_goal
@@ -303,8 +299,7 @@ class AStarSearch5
       return node.path if node.city == End
       visited << node.city
       node.city.adjacent_cities.shuffle.each do |adjacent|
-        ride = Ride.new(node.city, adjacent)
-        frontier << Node.new(adjacent, node.path + [ride]) unless visited.include? adjacent
+        frontier << Node.new(adjacent, node.path + [adjacent]) unless visited.include? adjacent
       end
     end
   end
@@ -320,9 +315,18 @@ end
   puts attempt
   result = attempt.new.run
 
-  result.each {|ride| puts ride }
+  total_distance = 0
+  result.each_with_index do |city, idx|
+    print city
+    if next_city = result[idx+1]
+      distance = Road.between(city, next_city).distance
+      total_distance += distance
+      puts " -> #{"%.0f" % distance}"
+    end
+  end
   print "arrived in #{result.size} steps "
-  print "(#{"%.0f" % result.map(&:road).map(&:distance).inject(&:+)} km)"
+  print "(#{"%.0f" % total_distance} km)"
   puts ""
   puts ""
 end
+
