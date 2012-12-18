@@ -1,5 +1,7 @@
 package bike_europe;
 
+import java.util.List;
+
 public class Util {
   private static Double RADIANS = (180/3.14169);
 
@@ -15,5 +17,12 @@ public class Util {
     Double t3 = Math.sin(a1) * Math.sin(b1);
 
     return 6366 * Math.acos(t1 + t2 + t3);
+  }
+
+  public static int kilometersBetween(List<City> cities) {
+    int distance = 0;
+    for (int i = 0; i < cities.size() - 1; i++)
+      distance += cities.get(i).kilometersTo(cities.get(i+1));
+    return distance;
   }
 }

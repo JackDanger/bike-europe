@@ -15,19 +15,15 @@ public class UniformCostSearch4 {
 
   private class Node {
     public final City city;
-    public final List<Ride> path;
+    public final List<City> path;
 
-    private Node(City city, List<Ride> path) {
+    private Node(City city, List<City> path) {
       this.city = city;
       this.path = path;
     }
 
     public int cost() {
-      int cost = 0;
-      for (Ride ride : path) {
-        cost += ride.road.distance;
-      }
-      return cost;
+      return Util.kilometersBetween(path);
     }
     @Override public String toString() {
       return city + " (" + cost() + ", " + path.size() + ")";
@@ -40,14 +36,14 @@ public class UniformCostSearch4 {
     }
   };
 
-  public List<Ride> run(){
+  public List<City> run(){
     this.visited = new HashSet<City>();
     this.frontier = new PriorityQueue<Node>(1, COST_COMPARATOR);
     return travel();
   }
 
-  public List<Ride> travel() {
-    frontier.add(new Node(BikeAcrossEurope.start, new ArrayList<Ride>()));
+  public List<City> travel() {
+    frontier.add(new Node(BikeAcrossEurope.start, new ArrayList<City>()));
 
     while (!frontier.isEmpty()) {
       Node node = frontier.poll();
@@ -57,11 +53,11 @@ public class UniformCostSearch4 {
       visited.add(node.city);
       List<City> nextCities = node.city.adjacentCities();
       while (!nextCities.isEmpty()) {
-        City city = (City) nextCities.remove((int) Math.floor(Math.random() * nextCities.size()));
+        City city = nextCities.remove((int) Math.floor(Math.random() * nextCities.size()));
         if (!visited.contains(city)) {
-          List<Ride> newPath = new ArrayList<Ride>();
-          for (Ride ride : node.path) { newPath.add(ride); }
-          newPath.add(new Ride(node.city, city));
+          List<City> newPath = new ArrayList<City>();
+          for (City c : node.path) { newPath.add(c); }
+          newPath.add(city);
           frontier.add(new Node(city, newPath));
         }
       }
