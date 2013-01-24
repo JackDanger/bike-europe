@@ -1,6 +1,6 @@
 
 desc "publish to github pages"
-task :publish do
+task :publish => :build do
   `git push github HEAD:gh-pages`
 end
 
