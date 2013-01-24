@@ -191,223 +191,23 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <span class="no">Start</span> <span class="o">=</span> <span class="ss">City</span><span class="p">:</span><span class="ss">:Rome</span>
 <span class="no">End</span>   <span class="o">=</span> <span class="ss">City</span><span class="p">:</span><span class="ss">:Berlin</span>
 
-<span class="k">class</span> <span class="nc">GreedyRandomDepthFirstWithLoops1</span>
-  <span class="k">def</span> <span class="nf">run</span>
-    <span class="n">travel</span><span class="p">(</span><span class="no">Start</span><span class="p">)</span>
-  <span class="k">end</span>
 
-  <span class="k">def</span> <span class="nf">travel</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="o">[]</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">path</span> <span class="k">if</span> <span class="n">city</span> <span class="o">==</span> <span class="no">End</span>
-    <span class="n">next_city</span> <span class="o">=</span> <span class="n">city</span><span class="o">.</span><span class="n">adjacent_cities</span><span class="o">.</span><span class="n">sample</span>
-    <span class="n">travel</span><span class="p">(</span><span class="n">next_city</span><span class="p">,</span> <span class="n">path</span> <span class="o">+</span> <span class="o">[</span><span class="n">next_city</span><span class="o">]</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<span class="c1"># Make a list of cities from Rome to Berlin</span>
+<span class="n">result</span> <span class="o">=</span> <span class="o">[]</span> <span class="c1"># &lt;-- your code goes here!!!!</span>
 
-<span class="k">class</span> <span class="nc">GreedyRandomDepthFirstWithoutLoops2</span>
-  <span class="kp">attr_reader</span> <span class="ss">:visited</span>
-  <span class="k">def</span> <span class="nf">run</span>
-    <span class="vi">@visited</span> <span class="o">=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span>
-    <span class="n">travel</span><span class="p">(</span><span class="no">Start</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">travel</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="o">[]</span><span class="p">)</span>
-    <span class="n">visited</span> <span class="o">&lt;&lt;</span> <span class="n">city</span>
-    <span class="k">return</span> <span class="n">path</span> <span class="k">if</span> <span class="n">city</span> <span class="o">==</span> <span class="no">End</span>
-    <span class="n">city</span><span class="o">.</span><span class="n">adjacent_cities</span><span class="o">.</span><span class="n">reject</span> <span class="p">{</span><span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">visited</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="n">shuffle</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">next_city</span><span class="o">|</span>
-      <span class="k">if</span> <span class="n">result</span> <span class="o">=</span> <span class="n">travel</span><span class="p">(</span><span class="n">next_city</span><span class="p">,</span> <span class="n">path</span> <span class="o">+</span> <span class="o">[</span><span class="n">next_city</span><span class="o">]</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-    <span class="kp">nil</span>
+<span class="n">total_distance</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">result</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">city</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
+  <span class="nb">print</span> <span class="n">city</span>
+  <span class="k">if</span> <span class="n">next_city</span> <span class="o">=</span> <span class="n">result</span><span class="o">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="no">Road</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">next_city</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span>
+    <span class="n">total_distance</span> <span class="o">+=</span> <span class="n">distance</span>
+    <span class="nb">puts</span> <span class="s2">&quot; -&gt; </span><span class="si">#{</span><span class="s2">&quot;%.0f&quot;</span> <span class="o">%</span> <span class="n">distance</span><span class="si">}</span><span class="s2">&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">BreadthFirstRandomWithoutLoops3</span>
-  <span class="kp">attr_reader</span> <span class="ss">:visited</span>
-  <span class="k">def</span> <span class="nf">run</span>
-    <span class="vi">@visited</span> <span class="o">=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span>
-    <span class="n">travel</span>
-  <span class="k">end</span>
-
-  <span class="k">class</span> <span class="nc">Node</span>
-    <span class="kp">attr_accessor</span> <span class="ss">:city</span><span class="p">,</span> <span class="ss">:path</span>
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-      <span class="vi">@city</span><span class="p">,</span> <span class="vi">@path</span> <span class="o">=</span> <span class="n">city</span><span class="p">,</span> <span class="n">path</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">travel</span>
-    <span class="n">frontier</span> <span class="o">=</span> <span class="o">[</span><span class="no">Node</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">Start</span><span class="p">,</span> <span class="o">[]</span><span class="p">)</span><span class="o">]</span>
-    <span class="k">while</span> <span class="n">frontier</span><span class="o">.</span><span class="n">any?</span>
-      <span class="n">node</span> <span class="o">=</span> <span class="n">frontier</span><span class="o">.</span><span class="n">shift</span>
-      <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">path</span> <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">city</span> <span class="o">==</span> <span class="no">End</span>
-      <span class="n">visited</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="o">.</span><span class="n">city</span>
-      <span class="n">node</span><span class="o">.</span><span class="n">city</span><span class="o">.</span><span class="n">adjacent_cities</span><span class="o">.</span><span class="n">shuffle</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">adjacent</span><span class="o">|</span>
-        <span class="n">frontier</span> <span class="o">&lt;&lt;</span> <span class="no">Node</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">adjacent</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="o">[</span><span class="n">adjacent</span><span class="o">]</span><span class="p">)</span> <span class="k">unless</span> <span class="n">visited</span><span class="o">.</span><span class="n">include?</span> <span class="n">adjacent</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">UniformCostSearch4</span>
-  <span class="kp">attr_reader</span> <span class="ss">:visited</span>
-  <span class="k">def</span> <span class="nf">run</span>
-    <span class="vi">@visited</span> <span class="o">=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span>
-    <span class="n">travel</span>
-  <span class="k">end</span>
-
-  <span class="k">class</span> <span class="nc">Node</span>
-    <span class="kp">attr_accessor</span> <span class="ss">:city</span><span class="p">,</span> <span class="ss">:path</span>
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-      <span class="vi">@city</span><span class="p">,</span> <span class="vi">@path</span> <span class="o">=</span> <span class="n">city</span><span class="p">,</span> <span class="n">path</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">cost</span>
-      <span class="n">cost</span> <span class="o">=</span> <span class="mi">0</span>
-      <span class="n">path</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">city</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
-        <span class="k">if</span> <span class="n">next_city</span> <span class="o">=</span> <span class="n">path</span><span class="o">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span>
-          <span class="n">cost</span> <span class="o">+=</span> <span class="no">Road</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">next_city</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span>
-        <span class="k">end</span>
-      <span class="k">end</span>
-      <span class="n">cost</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">class</span> <span class="nc">FakePriorityQueue</span> <span class="o">&lt;</span> <span class="no">BasicObject</span>
-    <span class="kp">attr_reader</span> <span class="ss">:items</span>
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">comparator</span><span class="p">)</span>
-      <span class="vi">@items</span> <span class="o">=</span> <span class="o">[]</span>
-      <span class="vi">@comparator</span> <span class="o">=</span> <span class="n">comparator</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">&lt;&lt;</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-      <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span>
-      <span class="n">sort!</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">pop</span>
-      <span class="n">items</span><span class="o">.</span><span class="n">shift</span>
-    <span class="k">end</span>
-
-    <span class="kp">private</span>
-
-    <span class="k">def</span> <span class="nf">sort!</span>
-      <span class="vi">@items</span> <span class="o">=</span> <span class="n">items</span><span class="o">.</span><span class="n">sort_by</span> <span class="o">&amp;</span><span class="vi">@comparator</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-      <span class="n">items</span><span class="o">.</span><span class="n">send</span> <span class="nb">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">travel</span>
-    <span class="n">frontier</span> <span class="o">=</span> <span class="no">FakePriorityQueue</span><span class="o">.</span><span class="n">new</span> <span class="ss">:cost</span>
-    <span class="n">frontier</span> <span class="o">&lt;&lt;</span> <span class="no">Node</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">Start</span><span class="p">,</span> <span class="o">[]</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">frontier</span><span class="o">.</span><span class="n">any?</span>
-      <span class="n">node</span> <span class="o">=</span> <span class="n">frontier</span><span class="o">.</span><span class="n">pop</span>
-      <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">path</span> <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">city</span> <span class="o">==</span> <span class="no">End</span>
-      <span class="n">visited</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="o">.</span><span class="n">city</span>
-      <span class="n">node</span><span class="o">.</span><span class="n">city</span><span class="o">.</span><span class="n">adjacent_cities</span><span class="o">.</span><span class="n">shuffle</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">adjacent</span><span class="o">|</span>
-        <span class="n">frontier</span> <span class="o">&lt;&lt;</span> <span class="no">Node</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">adjacent</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="o">[</span><span class="n">adjacent</span><span class="o">]</span><span class="p">)</span> <span class="k">unless</span> <span class="n">visited</span><span class="o">.</span><span class="n">include?</span> <span class="n">adjacent</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">AStarSearch5</span>
-  <span class="kp">attr_reader</span> <span class="ss">:visited</span>
-  <span class="k">def</span> <span class="nf">run</span>
-    <span class="vi">@visited</span> <span class="o">=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span>
-    <span class="n">travel</span>
-  <span class="k">end</span>
-
-  <span class="k">class</span> <span class="nc">Node</span>
-    <span class="kp">attr_accessor</span> <span class="ss">:city</span><span class="p">,</span> <span class="ss">:path</span>
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-      <span class="vi">@city</span><span class="p">,</span> <span class="vi">@path</span> <span class="o">=</span> <span class="n">city</span><span class="p">,</span> <span class="n">path</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">cost</span>
-      <span class="n">cost</span> <span class="o">=</span> <span class="mi">0</span>
-      <span class="n">path</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">city</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
-        <span class="k">if</span> <span class="n">next_city</span> <span class="o">=</span> <span class="n">path</span><span class="o">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span>
-          <span class="n">cost</span> <span class="o">+=</span> <span class="no">Road</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">next_city</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span>
-        <span class="k">end</span>
-      <span class="k">end</span>
-      <span class="n">cost</span> <span class="o">+</span> <span class="n">kilometers_to_goal</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">kilometers_to_goal</span>
-      <span class="n">city</span><span class="o">.</span><span class="n">kilometers_to</span> <span class="no">End</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">class</span> <span class="nc">FakePriorityQueue</span> <span class="o">&lt;</span> <span class="no">BasicObject</span>
-    <span class="kp">attr_reader</span> <span class="ss">:items</span>
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">comparator</span><span class="p">)</span>
-      <span class="vi">@items</span> <span class="o">=</span> <span class="o">[]</span>
-      <span class="vi">@comparator</span> <span class="o">=</span> <span class="n">comparator</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">&lt;&lt;</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-      <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span>
-      <span class="n">sort!</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">pop</span>
-      <span class="n">items</span><span class="o">.</span><span class="n">shift</span>
-    <span class="k">end</span>
-
-    <span class="kp">private</span>
-
-    <span class="k">def</span> <span class="nf">sort!</span>
-      <span class="n">items</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">cost</span>
-      <span class="vi">@items</span> <span class="o">=</span> <span class="n">items</span><span class="o">.</span><span class="n">sort_by</span> <span class="o">&amp;</span><span class="vi">@comparator</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-      <span class="n">items</span><span class="o">.</span><span class="n">send</span> <span class="nb">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">travel</span>
-    <span class="n">frontier</span> <span class="o">=</span> <span class="no">FakePriorityQueue</span><span class="o">.</span><span class="n">new</span> <span class="ss">:cost</span>
-    <span class="n">frontier</span> <span class="o">&lt;&lt;</span> <span class="no">Node</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">Start</span><span class="p">,</span> <span class="o">[]</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">frontier</span><span class="o">.</span><span class="n">any?</span>
-      <span class="n">node</span> <span class="o">=</span> <span class="n">frontier</span><span class="o">.</span><span class="n">pop</span>
-      <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">path</span> <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">city</span> <span class="o">==</span> <span class="no">End</span>
-      <span class="n">visited</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="o">.</span><span class="n">city</span>
-      <span class="n">node</span><span class="o">.</span><span class="n">city</span><span class="o">.</span><span class="n">adjacent_cities</span><span class="o">.</span><span class="n">shuffle</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">adjacent</span><span class="o">|</span>
-        <span class="n">frontier</span> <span class="o">&lt;&lt;</span> <span class="no">Node</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">adjacent</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="o">[</span><span class="n">adjacent</span><span class="o">]</span><span class="p">)</span> <span class="k">unless</span> <span class="n">visited</span><span class="o">.</span><span class="n">include?</span> <span class="n">adjacent</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-
-<span class="o">[</span> <span class="no">GreedyRandomDepthFirstWithLoops1</span><span class="p">,</span>
-  <span class="no">GreedyRandomDepthFirstWithoutLoops2</span><span class="p">,</span>
-  <span class="no">BreadthFirstRandomWithoutLoops3</span><span class="p">,</span>
-  <span class="no">UniformCostSearch4</span><span class="p">,</span>
-  <span class="no">AStarSearch5</span> <span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">attempt</span><span class="o">|</span>
-
-  <span class="nb">puts</span> <span class="n">attempt</span>
-  <span class="n">result</span> <span class="o">=</span> <span class="n">attempt</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">run</span>
-
-  <span class="n">total_distance</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="n">result</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">city</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
-    <span class="nb">print</span> <span class="n">city</span>
-    <span class="k">if</span> <span class="n">next_city</span> <span class="o">=</span> <span class="n">result</span><span class="o">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span>
-      <span class="n">distance</span> <span class="o">=</span> <span class="no">Road</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">next_city</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span>
-      <span class="n">total_distance</span> <span class="o">+=</span> <span class="n">distance</span>
-      <span class="nb">puts</span> <span class="s2">&quot; -&gt; </span><span class="si">#{</span><span class="s2">&quot;%.0f&quot;</span> <span class="o">%</span> <span class="n">distance</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-  <span class="nb">print</span> <span class="s2">&quot;arrived in </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> steps &quot;</span>
-  <span class="nb">print</span> <span class="s2">&quot;(</span><span class="si">#{</span><span class="s2">&quot;%.0f&quot;</span> <span class="o">%</span> <span class="n">total_distance</span><span class="si">}</span><span class="s2"> km)&quot;</span>
-  <span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
-  <span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
-<span class="k">end</span>
+<span class="nb">print</span> <span class="s2">&quot;arrived in </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> steps &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;(</span><span class="si">#{</span><span class="s2">&quot;%.0f&quot;</span> <span class="o">%</span> <span class="n">total_distance</span><span class="si">}</span><span class="s2"> km)&quot;</span>
+<span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </body>
 </html>
