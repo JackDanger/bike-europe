@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Bike across Europe!</title>
+  </head>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Rufina' rel='stylesheet' type='text/css' />
+  <style>
+body {
+  background-image: url(bg.png);
+}
+#container {
+  margin: 0 auto;
+  width: 840px;
+  background-color: #FFF;
+  min-height: 500px;
+  border-radius: 13px;
+  box-shadow: 1px 1px 7px #888;
+}
+#side, #intro {
+  padding: 10px;
+  margin: 0px;
+  float: left;
+}
+#side {
+  width: 280px;
+}
+#intro {
+  margin-left: 20px;
+  width: 480px;
+}
+#map img {
+  width: 280px;
+  border-radius: 13px;
+}
+#intro {
+  font-family: Rufina, Georgia;
+  font-size: 15px;
+  line-height: 1.6em;
+}
+#languages {
+  margin: 0;
+  padding: 0;
+}
+#languages li {
+  padding: 0;
+  margin-left: 70px;
+  line-height: 1.6em;
+  color: green;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 24px
+}
+#languages li a {
+  color: green;
+  text-decoration: none;
+}
+  </style>
+  <body>
+    <div id="container">
+      <div id="side">
+        <div id="map">
+          <a href="map.jpg">
+            <img alt="map" src="map.jpg" />
+          </a>
+        </div>
+        <ul id="languages">
+          <h2>Pick your best language</h2>
+          <li>
+            <a href="python/index.html">Python</a>
+          </li>
+          <li>
+            <a href="ruby/index.html">Ruby</a>
+          </li>
+          <li>
+            <a href="java/project.tgz">Java</a>
+          </li>
+          <li>
+            <a href="javascript/index.html">Javascript</a>
+          </li>
+          <!--
+          <li>
+            <a href="clojure/index.html">Clojure</a>
+          </li>
+          -->
+        </ul>
+      </div>
+      <div id="intro">
+        <h1>Let's bike across Europe!</h1>
+        <p>
+          Here's the problem: you need to get from Rome, Italy to Berlin, Germany
+          and you only have your bike. Not all roads are bike-friendly so you
+          only have a few routes available to you. What's the shortest path to get
+          from Rome (in the south) to Berlin (in the North)?
+        </p>
+
+        <p>
+          <strong>Hints:</strong>
+          <ul>
+            <li>
+              The code for calculating distances, determining the length of
+              the road, etc. is already written for you.
+            </li>
+            <li>
+              Pick your <em>best</em> language. Don't make this harder
+              than it needs to be.
+            </li>
+            <li>
+              Take 5 minutes to read through the existing code.
+            </li>
+            <li>
+              This is a graph traversal problem that has both easy and
+              difficult solutions. Go for an easy one first.
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
