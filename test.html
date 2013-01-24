@@ -1,0 +1,128 @@
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sets</span> <span class="kn">import</span> <span class="n">Set</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">RADIANS</span> <span class="o">=</span> <span class="mi">180</span><span class="o">/</span><span class="mf">3.14169</span>
+<span class="k">def</span> <span class="nf">kilometers_between</span><span class="p">(</span><span class="n">lat1</span><span class="p">,</span> <span class="n">lng1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="n">lng2</span><span class="p">):</span>
+    <span class="n">a1</span> <span class="o">=</span> <span class="n">lat1</span> <span class="o">/</span> <span class="n">RADIANS</span>
+    <span class="n">a2</span> <span class="o">=</span> <span class="n">lng1</span> <span class="o">/</span> <span class="n">RADIANS</span>
+    <span class="n">b1</span> <span class="o">=</span> <span class="n">lat2</span> <span class="o">/</span> <span class="n">RADIANS</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">lng2</span> <span class="o">/</span> <span class="n">RADIANS</span>
+
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>
+    <span class="n">t3</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="mi">6366</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span> <span class="o">+</span> <span class="n">t3</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">City</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lng</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lat</span>  <span class="o">=</span> <span class="n">lat</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lng</span>  <span class="o">=</span> <span class="n">lng</span>
+
+
+    <span class="k">def</span> <span class="nf">kilometers_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">kilometers_between</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lng</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">lng</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">roads</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">road</span><span class="p">:</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="o">==</span> <span class="bp">self</span> <span class="ow">or</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="o">==</span> <span class="bp">self</span><span class="p">,</span> <span class="n">Roads</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">adjacent_cities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">road</span><span class="o">.</span><span class="n">the_city_opposite</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">roads</span><span class="p">()]</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+
+<span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;Roads must have two cities&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">kilometers_to</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">the_city_opposite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">city</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">city</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">city</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="s">&quot;#{city} isn&#39;t connected to #{self}&quot;</span>
+
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;#{a} | #{b} (&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%.0f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; km)&quot;</span>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">between</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="n">Roads</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="o">==</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="o">==</span> <span class="n">a</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">road</span>
+        <span class="k">raise</span> <span class="s">&quot;There is no road between &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; and &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+
+<span class="n">Berlin</span>    <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Berlin&#39;</span><span class="p">,</span>    <span class="mf">52.482668</span><span class="p">,</span> <span class="mf">13.359275</span><span class="p">)</span>
+<span class="n">Paris</span>     <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Paris&#39;</span><span class="p">,</span>     <span class="mf">48.980405</span><span class="p">,</span> <span class="mf">2.2851849</span><span class="p">)</span>
+<span class="n">Milan</span>     <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Milan&#39;</span><span class="p">,</span>     <span class="mf">45.520543</span><span class="p">,</span> <span class="mf">9.1419459</span><span class="p">)</span>
+<span class="n">Frankfurt</span> <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Frankfurt&#39;</span><span class="p">,</span> <span class="mf">50.078848</span><span class="p">,</span> <span class="mf">8.6349115</span><span class="p">)</span>
+<span class="n">Munich</span>    <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Munich&#39;</span><span class="p">,</span>    <span class="mf">48.166229</span><span class="p">,</span> <span class="mf">11.558089</span><span class="p">)</span>
+<span class="n">Zurich</span>    <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Zurich&#39;</span><span class="p">,</span>    <span class="mf">47.383444</span><span class="p">,</span> <span class="mf">8.5254142</span><span class="p">)</span>
+<span class="n">Tours</span>     <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Tours&#39;</span><span class="p">,</span>     <span class="mf">47.413572</span><span class="p">,</span> <span class="mf">0.6810506</span><span class="p">)</span>
+<span class="n">Lyon</span>      <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Lyon&#39;</span><span class="p">,</span>      <span class="mf">45.767122</span><span class="p">,</span> <span class="mf">4.8339568</span><span class="p">)</span>
+<span class="n">Vienna</span>    <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Vienna&#39;</span><span class="p">,</span>    <span class="mf">48.224431</span><span class="p">,</span> <span class="mf">16.389240</span><span class="p">)</span>
+<span class="n">Prague</span>    <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Prague&#39;</span><span class="p">,</span>    <span class="mf">50.092396</span><span class="p">,</span> <span class="mf">14.436144</span><span class="p">)</span>
+<span class="n">Krakow</span>    <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Krakow&#39;</span><span class="p">,</span>    <span class="mf">50.050363</span><span class="p">,</span> <span class="mf">19.928578</span><span class="p">)</span>
+<span class="n">Warsaw</span>    <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Warsaw&#39;</span><span class="p">,</span>    <span class="mf">52.254756</span><span class="p">,</span> <span class="mf">21.005968</span><span class="p">)</span>
+<span class="n">Hamburg</span>   <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Hamburg&#39;</span><span class="p">,</span>   <span class="mf">53.539699</span><span class="p">,</span> <span class="mf">9.9977143</span><span class="p">)</span>
+<span class="n">Antwerp</span>   <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Antwerp&#39;</span><span class="p">,</span>   <span class="mf">51.220613</span><span class="p">,</span> <span class="mf">4.3954882</span><span class="p">)</span>
+<span class="n">Torino</span>    <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Torino&#39;</span><span class="p">,</span>    <span class="mf">45.105321</span><span class="p">,</span> <span class="mf">7.6451957</span><span class="p">)</span>
+<span class="n">Rome</span>      <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Rome&#39;</span><span class="p">,</span>      <span class="mf">42.032845</span><span class="p">,</span> <span class="mf">12.390408</span><span class="p">)</span>
+
+
+<span class="n">Roads</span> <span class="o">=</span> <span class="n">Set</span><span class="p">()</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Hamburg</span><span class="p">,</span>   <span class="n">Berlin</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Hamburg</span><span class="p">,</span>   <span class="n">Antwerp</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Hamburg</span><span class="p">,</span>   <span class="n">Frankfurt</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Berlin</span><span class="p">,</span>    <span class="n">Warsaw</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Berlin</span><span class="p">,</span>    <span class="n">Prague</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Antwerp</span><span class="p">,</span>   <span class="n">Paris</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Paris</span><span class="p">,</span>     <span class="n">Tours</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Paris</span><span class="p">,</span>     <span class="n">Lyon</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Paris</span><span class="p">,</span>     <span class="n">Zurich</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Paris</span><span class="p">,</span>     <span class="n">Frankfurt</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Frankfurt</span><span class="p">,</span> <span class="n">Prague</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Krakow</span><span class="p">,</span>    <span class="n">Warsaw</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Krakow</span><span class="p">,</span>    <span class="n">Prague</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Krakow</span><span class="p">,</span>    <span class="n">Vienna</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Vienna</span><span class="p">,</span>    <span class="n">Munich</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Vienna</span><span class="p">,</span>    <span class="n">Prague</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Zurich</span><span class="p">,</span>    <span class="n">Milan</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Lyon</span><span class="p">,</span>      <span class="n">Torino</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Torino</span><span class="p">,</span>    <span class="n">Milan</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Torino</span><span class="p">,</span>    <span class="n">Rome</span><span class="p">))</span>
+<span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Milan</span><span class="p">,</span>     <span class="n">Rome</span><span class="p">))</span>
+
+
+<span class="n">Start</span> <span class="o">=</span> <span class="n">Rome</span>
+<span class="n">End</span>   <span class="o">=</span> <span class="n">Berlin</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span> <span class="c"># make a list of cities from Rome to Berlin</span>
+
+<span class="n">total_distance</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">next_city</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">Road</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">next_city</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span>
+        <span class="n">total_distance</span> <span class="o">+=</span> <span class="n">distance</span>
+        <span class="k">print</span> <span class="n">city</span><span class="p">,</span> <span class="s">&quot; -&gt; &quot;</span><span class="p">,</span> <span class="n">next_city</span><span class="p">,</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%.0f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">distance</span><span class="p">),</span> <span class="s">&quot;km&quot;</span>
+
+
+<span class="k">print</span> <span class="s">&quot;arrived in #{result.size} steps &quot;</span>
+<span class="k">print</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%.0f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">total_distance</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; km)&quot;</span>
+<span class="k">print</span> <span class="s">&quot;&quot;</span>
+<span class="k">print</span> <span class="s">&quot;&quot;</span>
+</pre></div>
