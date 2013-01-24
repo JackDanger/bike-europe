@@ -112,19 +112,221 @@ end
 Start = City::Rome
 End   = City::Berlin
 
-result = [] # make a list of cities from Rome to Berlin
+class GreedyRandomDepthFirstWithLoops1
+  def run
+    travel(Start)
+  end
 
-total_distance = 0
-result.each_with_index do |city, idx|
-  print city
-  if next_city = result[idx+1]
-    distance = Road.between(city, next_city).distance
-    total_distance += distance
-    puts " -> #{"%.0f" % distance}"
+  def travel(city, path = [])
+    return path if city == End
+    next_city = city.adjacent_cities.sample
+    travel(next_city, path + [next_city])
   end
 end
-print "arrived in #{result.size} steps "
-print "(#{"%.0f" % total_distance} km)"
-puts ""
-puts ""
+
+class GreedyRandomDepthFirstWithoutLoops2
+  attr_reader :visited
+  def run
+    @visited = Set.new
+    travel(Start)
+  end
+
+  def travel(city, path = [])
+    visited << city
+    return path if city == End
+    city.adjacent_cities.reject {|c| visited.include?(c) }.shuffle.each do |next_city|
+      if result = travel(next_city, path + [next_city])
+        return result
+      end
+    end
+    nil
+  end
+end
+
+class BreadthFirstRandomWithoutLoops3
+  attr_reader :visited
+  def run
+    @visited = Set.new
+    travel
+  end
+
+  class Node
+    attr_accessor :city, :path
+    def initialize(city, path)
+      @city, @path = city, path
+    end
+  end
+
+  def travel
+    frontier = [Node.new(Start, [])]
+    while frontier.any?
+      node = frontier.shift
+      return node.path if node.city == End
+      visited << node.city
+      node.city.adjacent_cities.shuffle.each do |adjacent|
+        frontier << Node.new(adjacent, node.path + [adjacent]) unless visited.include? adjacent
+      end
+    end
+  end
+end
+
+class UniformCostSearch4
+  attr_reader :visited
+  def run
+    @visited = Set.new
+    travel
+  end
+
+  class Node
+    attr_accessor :city, :path
+    def initialize(city, path)
+      @city, @path = city, path
+    end
+
+    def cost
+      cost = 0
+      path.each_with_index do |city, idx|
+        if next_city = path[idx+1]
+          cost += Road.between(city, next_city).distance
+        end
+      end
+      cost
+    end
+  end
+
+  class FakePriorityQueue < BasicObject
+    attr_reader :items
+    def initialize(comparator)
+      @items = []
+      @comparator = comparator
+    end
+
+    def <<(item)
+      items << item
+      sort!
+    end
+
+    def pop
+      items.shift
+    end
+
+    private
+
+    def sort!
+      @items = items.sort_by &@comparator
+    end
+
+    def method_missing(name, *args, &block)
+      items.send name, *args, &block
+    end
+  end
+
+  def travel
+    frontier = FakePriorityQueue.new :cost
+    frontier << Node.new(Start, [])
+    while frontier.any?
+      node = frontier.pop
+      return node.path if node.city == End
+      visited << node.city
+      node.city.adjacent_cities.shuffle.each do |adjacent|
+        frontier << Node.new(adjacent, node.path + [adjacent]) unless visited.include? adjacent
+      end
+    end
+  end
+end
+
+class AStarSearch5
+  attr_reader :visited
+  def run
+    @visited = Set.new
+    travel
+  end
+
+  class Node
+    attr_accessor :city, :path
+    def initialize(city, path)
+      @city, @path = city, path
+    end
+
+    def cost
+      cost = 0
+      path.each_with_index do |city, idx|
+        if next_city = path[idx+1]
+          cost += Road.between(city, next_city).distance
+        end
+      end
+      cost + kilometers_to_goal
+    end
+
+    def kilometers_to_goal
+      city.kilometers_to End
+    end
+  end
+
+  class FakePriorityQueue < BasicObject
+    attr_reader :items
+    def initialize(comparator)
+      @items = []
+      @comparator = comparator
+    end
+
+    def <<(item)
+      items << item
+      sort!
+    end
+
+    def pop
+      items.shift
+    end
+
+    private
+
+    def sort!
+      items.first.cost
+      @items = items.sort_by &@comparator
+    end
+
+    def method_missing(name, *args, &block)
+      items.send name, *args, &block
+    end
+  end
+
+  def travel
+    frontier = FakePriorityQueue.new :cost
+    frontier << Node.new(Start, [])
+    while frontier.any?
+      node = frontier.pop
+      return node.path if node.city == End
+      visited << node.city
+      node.city.adjacent_cities.shuffle.each do |adjacent|
+        frontier << Node.new(adjacent, node.path + [adjacent]) unless visited.include? adjacent
+      end
+    end
+  end
+end
+
+
+[ GreedyRandomDepthFirstWithLoops1,
+  GreedyRandomDepthFirstWithoutLoops2,
+  BreadthFirstRandomWithoutLoops3,
+  UniformCostSearch4,
+  AStarSearch5 ].each do |attempt|
+
+  puts attempt
+  result = attempt.new.run
+
+  total_distance = 0
+  result.each_with_index do |city, idx|
+    print city
+    if next_city = result[idx+1]
+      distance = Road.between(city, next_city).distance
+      total_distance += distance
+      puts " -> #{"%.0f" % distance}"
+    end
+  end
+  print "arrived in #{result.size} steps "
+  print "(#{"%.0f" % total_distance} km)"
+  puts ""
+  puts ""
+end
 
