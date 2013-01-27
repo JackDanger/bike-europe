@@ -1,4 +1,3 @@
-from sets import Set
 import math
 import random
 
@@ -16,7 +15,6 @@ def kilometers_between(lat1, lng1, lat2, lng2):
     return 6366 * math.acos(t1 + t2 + t3)
 
 class City:
-
     def __init__(self, name, lat, lng):
         self.name = name
         self.lat  = lat
@@ -27,7 +25,7 @@ class City:
         return kilometers_between(self.lat, self.lng, other.lat, other.lng)
 
     def roads(self):
-        return filter(lambda road:road.a == self or road.b == self, Roads)
+        return filter(lambda road:road.a is self or road.b is self, Roads)
 
     def adjacent_cities(self):
         return [road.the_city_opposite(self) for road in self.roads()]
@@ -38,31 +36,31 @@ class City:
 
 class Road:
     def __init__(self, a, b):
-        if a == b:
-            raise Error("Roads must have two cities")
+        if a is b:
+            raise Exception("Roads must have two distinct cities")
         self.a = a
         self.b = b
         self.distance = a.kilometers_to(b)
 
     def the_city_opposite(self, city):
-        if city == self.a:
+        if city is self.a:
             return self.b
-        elif city == self.b:
+        elif city is self.b:
             return self.a
         else:
-            raise "#{city} isn't connected to #{self}"
+            raise Exception("%s isn't connected to %s" % (city, self))
 
 
     def __repr__(self):
-        return "#{a} | #{b} (" + ("%.0f" % self.distance) + " km)"
+        return "%s - %s (%.0f) km" % (a, b, self.distance)
 
 
     @staticmethod
     def between(a, b):
         for road in Roads:
-            if (road.a == a and road.b == b) or (road.a == b and road.b == a):
+            if (road.a is a and road.b is b) or (road.a is b and road.b is a):
                 return road
-        raise "There is no road between " + str(a) + " and " + str(b)
+        raise Exception("There is no road between %s and %s" % (a, b))
 
 
 Berlin    = City('Berlin',    52.482668, 13.359275)
@@ -83,7 +81,7 @@ Torino    = City('Torino',    45.105321, 7.6451957)
 Rome      = City('Rome',      42.032845, 12.390408)
 
 
-Roads = Set()
+Roads = set()
 Roads.add(Road(Hamburg,   Berlin))
 Roads.add(Road(Hamburg,   Antwerp))
 Roads.add(Road(Hamburg,   Frankfurt))
@@ -118,11 +116,10 @@ for idx, city in enumerate(result):
         next_city = result[idx+1]
         distance = Road.between(city, next_city).distance
         total_distance += distance
-        print city, " -> ", next_city, ("%.0f" % distance), "km"
+        print "%s - %s (%.0f) km" % (city, next_city, distance)
 
 
-print "arrived in #{result.size} steps "
-print "(" + ("%.0f" % total_distance) + " km)"
+print "arrived in %d steps (%.0f km)" % (len(result), total_distance)
 print ""
 print ""
 
