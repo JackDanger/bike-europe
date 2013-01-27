@@ -81,10 +81,10 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
   <span class="nx">RADIANS</span><span class="o">:</span> <span class="mi">180</span><span class="o">/</span><span class="mf">3.14169</span><span class="p">,</span>
 
   <span class="nx">kilometersBetween</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">lat1</span><span class="p">,</span> <span class="nx">lng1</span><span class="p">,</span> <span class="nx">lat2</span><span class="p">,</span> <span class="nx">lng2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="nx">lat1</span> <span class="o">/</span> <span class="nx">RADIANS</span><span class="p">,</span>
-        <span class="nx">a2</span> <span class="o">=</span> <span class="nx">lng1</span> <span class="o">/</span> <span class="nx">RADIANS</span><span class="p">,</span>
-        <span class="nx">b1</span> <span class="o">=</span> <span class="nx">lat2</span> <span class="o">/</span> <span class="nx">RADIANS</span><span class="p">,</span>
-        <span class="nx">b2</span> <span class="o">=</span> <span class="nx">lng2</span> <span class="o">/</span> <span class="nx">RADIANS</span><span class="p">,</span>
+    <span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="nx">lat1</span> <span class="o">/</span> <span class="nx">Util</span><span class="p">.</span><span class="nx">RADIANS</span><span class="p">,</span>
+        <span class="nx">a2</span> <span class="o">=</span> <span class="nx">lng1</span> <span class="o">/</span> <span class="nx">Util</span><span class="p">.</span><span class="nx">RADIANS</span><span class="p">,</span>
+        <span class="nx">b1</span> <span class="o">=</span> <span class="nx">lat2</span> <span class="o">/</span> <span class="nx">Util</span><span class="p">.</span><span class="nx">RADIANS</span><span class="p">,</span>
+        <span class="nx">b2</span> <span class="o">=</span> <span class="nx">lng2</span> <span class="o">/</span> <span class="nx">Util</span><span class="p">.</span><span class="nx">RADIANS</span><span class="p">,</span>
         <span class="nx">t1</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">a1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">a2</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">b1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">b2</span><span class="p">),</span>
         <span class="nx">t2</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">a1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">a2</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">b1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">b2</span><span class="p">),</span>
         <span class="nx">t3</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">a1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">b1</span><span class="p">)</span>
@@ -99,32 +99,33 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
   <span class="k">this</span><span class="p">.</span><span class="nx">lng</span>  <span class="o">=</span> <span class="nx">lng</span>
 <span class="p">}</span>
 <span class="nx">City</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">kilometersTo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">other</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">Util</span><span class="p">.</span><span class="nx">kilometersBetween</span><span class="p">(</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">lng</span><span class="p">,</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">other</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">other</span><span class="p">.</span><span class="nx">lng</span>
-    <span class="p">)</span>
-  <span class="p">}</span>
-<span class="nx">City</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">roads</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">roads</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="k">in</span> <span class="nx">Road</span><span class="p">.</span><span class="nx">ALL</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">road</span> <span class="o">=</span> <span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">road</span><span class="p">.</span><span class="nx">a</span> <span class="o">==</span> <span class="k">this</span> <span class="o">||</span> <span class="nx">road</span><span class="p">.</span><span class="nx">b</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span>
-      <span class="nx">roads</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">road</span><span class="p">)</span>
-  <span class="k">return</span> <span class="nx">roads</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">Util</span><span class="p">.</span><span class="nx">kilometersBetween</span><span class="p">(</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span>  <span class="k">this</span><span class="p">.</span><span class="nx">lng</span><span class="p">,</span>
+    <span class="nx">other</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">lng</span>
+  <span class="p">)</span>
 <span class="p">}</span>
-
-<span class="nx">City</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">adjacentCities</span>
-  <span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="nx">roads</span><span class="p">.</span><span class="nx">map</span> <span class="p">{</span><span class="o">|</span><span class="nx">road</span><span class="o">|</span> <span class="nx">road</span><span class="p">.</span><span class="nx">the_city_opposite</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span> <span class="p">}</span>
-  <span class="nx">end</span>
-<span class="nx">City</span><span class="p">.</span><span class="nx">prototyp</span>
-  <span class="nx">def</span> <span class="nx">to_s</span>
-    <span class="err">@</span><span class="nx">name</span>
-  <span class="nx">end</span>
-<span class="nx">end</span>
+<span class="nx">City</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">roads</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_roads</span><span class="p">)</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_roads</span>
+  <span class="kd">var</span> <span class="nx">roads</span> <span class="o">=</span> <span class="p">[],</span>
+      <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span>
+  <span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">road</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">road</span><span class="p">.</span><span class="nx">a</span> <span class="o">==</span> <span class="nx">self</span> <span class="o">||</span> <span class="nx">road</span><span class="p">.</span><span class="nx">b</span> <span class="o">==</span> <span class="nx">self</span><span class="p">)</span>
+      <span class="nx">roads</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">road</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_roads</span> <span class="o">=</span> <span class="nx">roads</span>
+  <span class="k">return</span> <span class="nx">roads</span>
+<span class="p">}</span>
+<span class="nx">City</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">adjacentCities</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_cities</span><span class="p">)</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_cities</span>
+  <span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[],</span>
+      <span class="nx">roads</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">roads</span><span class="p">()</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">roads</span><span class="p">)</span>
+    <span class="nx">cities</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">roads</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">theCityOpposite</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_cities</span> <span class="o">=</span> <span class="nx">cities</span>
+  <span class="k">return</span> <span class="nx">cities</span>
+<span class="p">}</span>
+<span class="nx">City</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span>
 <span class="p">}</span>
 
 <span class="nx">Berlin</span>    <span class="o">=</span> <span class="k">new</span> <span class="nx">City</span><span class="p">(</span><span class="s1">&#39;Berlin&#39;</span><span class="p">,</span>    <span class="mf">52.482668</span><span class="p">,</span> <span class="mf">13.359275</span><span class="p">)</span>
@@ -144,79 +145,122 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <span class="nx">Torino</span>    <span class="o">=</span> <span class="k">new</span> <span class="nx">City</span><span class="p">(</span><span class="s1">&#39;Torino&#39;</span><span class="p">,</span>    <span class="mf">45.105321</span><span class="p">,</span> <span class="mf">7.6451957</span><span class="p">)</span>
 <span class="nx">Rome</span>      <span class="o">=</span> <span class="k">new</span> <span class="nx">City</span><span class="p">(</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span>      <span class="mf">42.032845</span><span class="p">,</span> <span class="mf">12.390408</span><span class="p">)</span>
 
-<span class="kr">class</span> <span class="nx">Road</span>
+<span class="nx">Road</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">b</span> <span class="o">=</span> <span class="nx">b</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">distance</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">kilometersTo</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">theCityOpposite</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">city</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">city</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">b</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">a</span>
+<span class="p">}</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; | &quot;</span>
+       <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">b</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span>
+       <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">distance</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; km)&quot;</span>
+<span class="p">}</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">contains</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// mimicking a Set here</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span>
+<span class="p">}</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="nx">element</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span>
+    <span class="k">this</span><span class="p">[</span><span class="nx">element</span><span class="p">.</span><span class="nx">toString</span><span class="p">()]</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">between</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;checking: &quot;</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">b</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">road</span> <span class="o">=</span> <span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="p">(</span>   <span class="p">(</span><span class="nx">road</span><span class="p">.</span><span class="nx">a</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">&amp;&amp;</span> <span class="nx">road</span><span class="p">.</span><span class="nx">b</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">b</span><span class="p">)</span>
+        <span class="o">||</span> <span class="p">(</span><span class="nx">road</span><span class="p">.</span><span class="nx">a</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">b</span> <span class="o">&amp;&amp;</span> <span class="nx">road</span><span class="p">.</span><span class="nx">b</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="s2">&quot;returning road: &quot;</span><span class="p">,</span> <span class="nx">road</span><span class="p">)</span>
+      <span class="k">return</span> <span class="nx">road</span> 
+    <span class="p">}</span>
 
-  <span class="nx">require</span> <span class="s1">&#39;set&#39;</span>
-  <span class="nx">ALL</span> <span class="o">=</span> <span class="nx">Set</span><span class="p">.</span><span class="k">new</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="s2">&quot;No road between &quot;</span> <span class="o">+</span> <span class="nx">a</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span>
+<span class="p">}</span>
 
-  <span class="nx">attr_reader</span> <span class="o">:</span><span class="nx">a</span><span class="p">,</span> <span class="o">:</span><span class="nx">b</span><span class="p">,</span> <span class="o">:</span><span class="nx">distance</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Hamburg</span><span class="p">,</span>   <span class="nx">Berlin</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Hamburg</span><span class="p">,</span>   <span class="nx">Antwerp</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Hamburg</span><span class="p">,</span>   <span class="nx">Frankfurt</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Berlin</span><span class="p">,</span>    <span class="nx">Warsaw</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Berlin</span><span class="p">,</span>    <span class="nx">Prague</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Antwerp</span><span class="p">,</span>   <span class="nx">Paris</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Paris</span><span class="p">,</span>     <span class="nx">Tours</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Paris</span><span class="p">,</span>     <span class="nx">Lyon</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Paris</span><span class="p">,</span>     <span class="nx">Zurich</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Paris</span><span class="p">,</span>     <span class="nx">Frankfurt</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Frankfurt</span><span class="p">,</span> <span class="nx">Prague</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Krakow</span><span class="p">,</span>    <span class="nx">Warsaw</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Krakow</span><span class="p">,</span>    <span class="nx">Prague</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Krakow</span><span class="p">,</span>    <span class="nx">Vienna</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Vienna</span><span class="p">,</span>    <span class="nx">Munich</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Vienna</span><span class="p">,</span>    <span class="nx">Prague</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Zurich</span><span class="p">,</span>    <span class="nx">Milan</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Lyon</span><span class="p">,</span>      <span class="nx">Torino</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Torino</span><span class="p">,</span>    <span class="nx">Milan</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Torino</span><span class="p">,</span>    <span class="nx">Rome</span><span class="p">))</span>
+<span class="nx">Road</span><span class="p">.</span><span class="nx">All</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">Road</span><span class="p">(</span><span class="nx">Milan</span><span class="p">,</span>     <span class="nx">Rome</span><span class="p">))</span>
 
-  <span class="nx">def</span> <span class="nx">initialize</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
-    <span class="nx">raise</span> <span class="s2">&quot;Roads must have two cities&quot;</span> <span class="k">if</span> <span class="nx">a</span> <span class="o">==</span> <span class="nx">b</span>
-    <span class="err">@</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span>
-    <span class="err">@</span><span class="nx">b</span> <span class="o">=</span> <span class="nx">b</span>
-    <span class="err">@</span><span class="nx">distance</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">kilometers_to</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
-  <span class="nx">end</span>
-
-  <span class="nx">def</span> <span class="nx">the_city_opposite</span><span class="p">(</span><span class="nx">city</span><span class="p">)</span>
-    <span class="nx">raise</span> <span class="s2">&quot;#{city} isn&#39;t connected to #{self}&quot;</span> <span class="nx">unless</span> <span class="nx">a</span> <span class="o">==</span> <span class="nx">city</span> <span class="o">||</span> <span class="nx">b</span> <span class="o">==</span> <span class="nx">city</span>
-    <span class="nx">city</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">?</span> <span class="nx">b</span> <span class="o">:</span> <span class="nx">a</span>
-  <span class="nx">end</span>
-
-  <span class="nx">def</span> <span class="nx">to_s</span>
-    <span class="s2">&quot;#{a} | #{b} (#{&quot;</span><span class="o">%</span><span class="p">.</span><span class="mi">0</span><span class="nx">f</span><span class="s2">&quot; % distance} km)&quot;</span>
-  <span class="nx">end</span>
-
-  <span class="nx">def</span> <span class="nx">self</span><span class="p">.</span><span class="nx">between</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
-    <span class="nx">ALL</span><span class="p">.</span><span class="nx">detect</span> <span class="k">do</span> <span class="o">|</span><span class="nx">road</span><span class="o">|</span>
-      <span class="k">return</span> <span class="nx">road</span> <span class="k">if</span> <span class="p">(</span><span class="nx">road</span><span class="p">.</span><span class="nx">a</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">&amp;&amp;</span> <span class="nx">road</span><span class="p">.</span><span class="nx">b</span> <span class="o">==</span> <span class="nx">b</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">road</span><span class="p">.</span><span class="nx">a</span> <span class="o">==</span> <span class="nx">b</span> <span class="o">&amp;&amp;</span> <span class="nx">road</span><span class="p">.</span><span class="nx">b</span> <span class="o">==</span> <span class="nx">a</span><span class="p">)</span>
-    <span class="nx">end</span>
-    <span class="nx">raise</span> <span class="s2">&quot;There is no road between &quot;</span> <span class="o">+</span> <span class="nx">a</span><span class="p">.</span><span class="nx">to_s</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">to_s</span>
-  <span class="nx">end</span>
-
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Hamburg</span><span class="p">,</span>   <span class="nx">City</span><span class="o">::</span><span class="nx">Berlin</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Hamburg</span><span class="p">,</span>   <span class="nx">City</span><span class="o">::</span><span class="nx">Antwerp</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Hamburg</span><span class="p">,</span>   <span class="nx">City</span><span class="o">::</span><span class="nx">Frankfurt</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Berlin</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Warsaw</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Berlin</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Prague</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Antwerp</span><span class="p">,</span>   <span class="nx">City</span><span class="o">::</span><span class="nx">Paris</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Paris</span><span class="p">,</span>     <span class="nx">City</span><span class="o">::</span><span class="nx">Tours</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Paris</span><span class="p">,</span>     <span class="nx">City</span><span class="o">::</span><span class="nx">Lyon</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Paris</span><span class="p">,</span>     <span class="nx">City</span><span class="o">::</span><span class="nx">Zurich</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Paris</span><span class="p">,</span>     <span class="nx">City</span><span class="o">::</span><span class="nx">Frankfurt</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Frankfurt</span><span class="p">,</span> <span class="nx">City</span><span class="o">::</span><span class="nx">Prague</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Krakow</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Warsaw</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Krakow</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Prague</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Krakow</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Vienna</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Vienna</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Munich</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Vienna</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Prague</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Zurich</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Milan</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Lyon</span><span class="p">,</span>      <span class="nx">City</span><span class="o">::</span><span class="nx">Torino</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Torino</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Milan</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Torino</span><span class="p">,</span>    <span class="nx">City</span><span class="o">::</span><span class="nx">Rome</span><span class="p">)</span>
-  <span class="nx">ALL</span><span class="p">.</span><span class="nx">add</span> <span class="k">new</span><span class="p">(</span><span class="nx">City</span><span class="o">::</span><span class="nx">Milan</span><span class="p">,</span>     <span class="nx">City</span><span class="o">::</span><span class="nx">Rome</span><span class="p">)</span>
-<span class="nx">end</span>
-
-<span class="nx">Start</span> <span class="o">=</span> <span class="nx">City</span><span class="o">::</span><span class="nx">Rome</span>
-<span class="nx">End</span>   <span class="o">=</span> <span class="nx">City</span><span class="o">::</span><span class="nx">Berlin</span>
+<span class="nx">Start</span> <span class="o">=</span> <span class="nx">Rome</span>
+<span class="nx">End</span>   <span class="o">=</span> <span class="nx">Berlin</span>
 
 
-<span class="err">#</span> <span class="nx">Make</span> <span class="nx">a</span> <span class="nx">list</span> <span class="nx">of</span> <span class="nx">cities</span> <span class="nx">from</span> <span class="nx">Rome</span> <span class="nx">to</span> <span class="nx">Berlin</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="p">[]</span> <span class="err">#</span> <span class="o">&lt;--</span> <span class="nx">your</span> <span class="nx">code</span> <span class="nx">goes</span> <span class="nx">here</span><span class="o">!!!!</span>
 
-<span class="nx">total_distance</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="nx">result</span><span class="p">.</span><span class="nx">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="nx">city</span><span class="p">,</span> <span class="nx">idx</span><span class="o">|</span>
-  <span class="nx">print</span> <span class="nx">city</span>
-  <span class="k">if</span> <span class="nx">next_city</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nx">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-    <span class="nx">distance</span> <span class="o">=</span> <span class="nx">Road</span><span class="p">.</span><span class="nx">between</span><span class="p">(</span><span class="nx">city</span><span class="p">,</span> <span class="nx">next_city</span><span class="p">).</span><span class="nx">distance</span>
-    <span class="nx">total_distance</span> <span class="o">+=</span> <span class="nx">distance</span>
-    <span class="nx">puts</span> <span class="s2">&quot; -&gt; #{&quot;</span><span class="o">%</span><span class="p">.</span><span class="mi">0</span><span class="nx">f</span><span class="s2">&quot; % distance}&quot;</span>
-  <span class="nx">end</span>
-<span class="nx">end</span>
-<span class="nx">print</span> <span class="s2">&quot;arrived in #{result.size} steps &quot;</span>
-<span class="nx">print</span> <span class="s2">&quot;(#{&quot;</span><span class="o">%</span><span class="p">.</span><span class="mi">0</span><span class="nx">f</span><span class="s2">&quot; % total_distance} km)&quot;</span>
-<span class="nx">puts</span> <span class="s2">&quot;&quot;</span>
-<span class="nx">puts</span> <span class="s2">&quot;&quot;</span>
+<span class="c1">//result = your_code()</span>
+<span class="c1">// Your job: make `result` a list of cities from Rome to Berlin</span>
+
+<span class="nx">visited</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="kd">function</span> <span class="nx">travel</span><span class="p">(</span><span class="nx">start</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">frontier</span> <span class="o">=</span> <span class="p">[[</span><span class="nx">start</span><span class="p">]]</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">frontier</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">frontier</span><span class="p">.</span><span class="nx">shift</span><span class="p">(),</span>
+        <span class="nx">city</span> <span class="o">=</span> <span class="nx">path</span><span class="p">[</span><span class="nx">path</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+    <span class="nx">visited</span><span class="p">[</span><span class="nx">city</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">city</span> <span class="o">==</span> <span class="nx">End</span><span class="p">)</span>
+      <span class="k">return</span> <span class="nx">path</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">city</span><span class="p">.</span><span class="nx">adjacentCities</span><span class="p">())</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">newCity</span> <span class="o">=</span> <span class="nx">city</span><span class="p">.</span><span class="nx">adjacentCities</span><span class="p">()[</span><span class="nx">i</span><span class="p">],</span>
+          <span class="nx">newPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">visited</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">newCity</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;skipping &quot;</span><span class="p">,</span> <span class="nx">city</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;pushing &quot;</span> <span class="o">+</span> <span class="nx">newCity</span><span class="p">)</span>
+        <span class="nx">newPath</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newCity</span><span class="p">)</span>
+        <span class="nx">frontier</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newPath</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">travel</span><span class="p">(</span><span class="nx">Start</span><span class="p">)</span>
+
+
+<span class="nx">totalDistance</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">city</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+  <span class="kd">var</span> <span class="nx">nextCity</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">city</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;nextcity: &quot;</span><span class="p">,</span> <span class="nx">nextCity</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">nextCity</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">road</span> <span class="o">=</span> <span class="nx">Road</span><span class="p">.</span><span class="nx">between</span><span class="p">(</span><span class="nx">city</span><span class="p">,</span> <span class="nx">nextCity</span><span class="p">),</span>
+        <span class="nx">distance</span> <span class="o">=</span> <span class="nx">road</span><span class="p">.</span><span class="nx">distance</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">road</span><span class="p">,</span> <span class="nx">distance</span><span class="p">)</span>
+    <span class="nx">totalDistance</span> <span class="o">+=</span> <span class="nx">distance</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot; -&gt; &quot;</span> <span class="o">+</span> <span class="nx">distance</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;no nextCity&#39;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;arrived in &quot;</span> <span class="o">+</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="s2">&quot; steps &quot;</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nx">totalDistance</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; km)&quot;</span><span class="p">)</span>
 </pre></div>
 </body>
 </html>
