@@ -80,16 +80,6 @@ Road.prototype.toString = function() {
        + this.distance.toFixed(3) + " km)"
 }
 Road.All = []
-Road.All.contains = function(x) {
-  // mimicking a Set here
-  return this.hasOwnProperty(x.toString())
-}
-Road.All.add = function(element) {
-  if (!this.contains(element)) {
-    this.push(element)
-    this[element.toString()] = true
-  }
-}
 Road.between = function(a, b) {
   for (var i in Road.All) {
     var r = Road.All[i]
@@ -106,27 +96,27 @@ Road.between = function(a, b) {
   return "No road between " + a + " and " + b + "!"
 }
 
-Road.All.add(new Road(Hamburg,   Berlin))
-Road.All.add(new Road(Hamburg,   Antwerp))
-Road.All.add(new Road(Hamburg,   Frankfurt))
-Road.All.add(new Road(Berlin,    Warsaw))
-Road.All.add(new Road(Berlin,    Prague))
-Road.All.add(new Road(Antwerp,   Paris))
-Road.All.add(new Road(Paris,     Tours))
-Road.All.add(new Road(Paris,     Lyon))
-Road.All.add(new Road(Paris,     Zurich))
-Road.All.add(new Road(Paris,     Frankfurt))
-Road.All.add(new Road(Frankfurt, Prague))
-Road.All.add(new Road(Krakow,    Warsaw))
-Road.All.add(new Road(Krakow,    Prague))
-Road.All.add(new Road(Krakow,    Vienna))
-Road.All.add(new Road(Vienna,    Munich))
-Road.All.add(new Road(Vienna,    Prague))
-Road.All.add(new Road(Zurich,    Milan))
-Road.All.add(new Road(Lyon,      Torino))
-Road.All.add(new Road(Torino,    Milan))
-Road.All.add(new Road(Torino,    Rome))
-Road.All.add(new Road(Milan,     Rome))
+Road.All.push(new Road(Hamburg,   Berlin))
+Road.All.push(new Road(Hamburg,   Antwerp))
+Road.All.push(new Road(Hamburg,   Frankfurt))
+Road.All.push(new Road(Berlin,    Warsaw))
+Road.All.push(new Road(Berlin,    Prague))
+Road.All.push(new Road(Antwerp,   Paris))
+Road.All.push(new Road(Paris,     Tours))
+Road.All.push(new Road(Paris,     Lyon))
+Road.All.push(new Road(Paris,     Zurich))
+Road.All.push(new Road(Paris,     Frankfurt))
+Road.All.push(new Road(Frankfurt, Prague))
+Road.All.push(new Road(Krakow,    Warsaw))
+Road.All.push(new Road(Krakow,    Prague))
+Road.All.push(new Road(Krakow,    Vienna))
+Road.All.push(new Road(Vienna,    Munich))
+Road.All.push(new Road(Vienna,    Prague))
+Road.All.push(new Road(Zurich,    Milan))
+Road.All.push(new Road(Lyon,      Torino))
+Road.All.push(new Road(Torino,    Milan))
+Road.All.push(new Road(Torino,    Rome))
+Road.All.push(new Road(Milan,     Rome))
 
 Start = Rome
 End   = Berlin
