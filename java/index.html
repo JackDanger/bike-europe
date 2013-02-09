@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=latin1">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span class="kn">package</span> <span class="n">bike_europe</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BikeAcrossEurope</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">City</span> <span class="n">start</span> <span class="o">=</span> <span class="n">City</span><span class="o">.</span><span class="na">Rome</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">City</span> <span class="n">end</span>   <span class="o">=</span> <span class="n">City</span><span class="o">.</span><span class="na">Berlin</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="cm">/*******************************************</span>
+<span class="cm">     *******************************************</span>
+<span class="cm">     *******************************************/</span>
+
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">City</span><span class="o">&gt;</span> <span class="n">path</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">City</span><span class="o">&gt;();</span>
+
+    <span class="cm">/*******************************************</span>
+<span class="cm">     *******************************************</span>
+<span class="cm">     *******************************************/</span>
+
+
+    <span class="k">for</span> <span class="o">(</span><span class="n">City</span> <span class="n">city</span> <span class="o">:</span> <span class="n">path</span><span class="o">)</span> <span class="o">{</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">city</span><span class="o">);</span> <span class="o">}</span>
+    <span class="kt">int</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">BikeAcrossEurope</span><span class="o">.</span><span class="na">kilometersBetween</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;found in &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; steps (&quot;</span> <span class="o">+</span> <span class="n">distance</span> <span class="o">+</span> <span class="s">&quot; km)&quot;</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Node</span> <span class="o">{</span>
+    <span class="n">City</span> <span class="n">city</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">distance</span><span class="o">;</span>
+    <span class="n">City</span> <span class="n">prev</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Node</span><span class="o">(</span><span class="n">City</span> <span class="n">c</span><span class="o">,</span> <span class="kt">double</span> <span class="n">d</span><span class="o">,</span> <span class="n">City</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">city</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">distance</span> <span class="o">=</span> <span class="n">d</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="n">Double</span> <span class="n">RADIANS</span> <span class="o">=</span> <span class="o">(</span><span class="mi">180</span><span class="o">/</span><span class="mf">3.14169</span><span class="o">);</span>
+
+  <span class="c1">// Returns the distance between two geospatial coordinates in kilometers</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Double</span> <span class="nf">kilometersBetween</span><span class="o">(</span><span class="n">Double</span> <span class="n">lat1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">lng1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">lat2</span><span class="o">,</span> <span class="n">Double</span> <span class="n">lng2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Double</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">lat1</span> <span class="o">/</span> <span class="n">RADIANS</span><span class="o">;</span>
+    <span class="n">Double</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">lng1</span> <span class="o">/</span> <span class="n">RADIANS</span><span class="o">;</span>
+    <span class="n">Double</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">lat2</span> <span class="o">/</span> <span class="n">RADIANS</span><span class="o">;</span>
+    <span class="n">Double</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">lng2</span> <span class="o">/</span> <span class="n">RADIANS</span><span class="o">;</span>
+
+    <span class="n">Double</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">a1</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">a2</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">b1</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">b2</span><span class="o">);</span>
+    <span class="n">Double</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">a1</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">a2</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">b1</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">b2</span><span class="o">);</span>
+    <span class="n">Double</span> <span class="n">t3</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">a1</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">b1</span><span class="o">);</span>
+
+    <span class="k">return</span> <span class="mi">6366</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">acos</span><span class="o">(</span><span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span> <span class="o">+</span> <span class="n">t3</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">kilometersBetween</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">City</span><span class="o">&gt;</span> <span class="n">cities</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">cities</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+      <span class="n">distance</span> <span class="o">+=</span> <span class="n">cities</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">kilometersTo</span><span class="o">(</span><span class="n">cities</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">));</span>
+    <span class="k">return</span> <span class="n">distance</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Coordinate</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">getLat</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">getLng</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">kilometersTo</span><span class="o">(</span><span class="n">Coordinate</span> <span class="n">other</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">enum</span> <span class="n">City</span> <span class="kd">implements</span> <span class="n">Coordinate</span> <span class="o">{</span>
+
+    <span class="n">Berlin</span>   <span class="o">(</span><span class="mf">52.482668</span><span class="o">,</span> <span class="mf">13.359275</span><span class="o">),</span>
+    <span class="n">Paris</span>    <span class="o">(</span><span class="mf">48.980405</span><span class="o">,</span> <span class="mf">2.2851849</span><span class="o">),</span>
+    <span class="n">Milan</span>    <span class="o">(</span><span class="mf">45.520543</span><span class="o">,</span> <span class="mf">9.1419459</span><span class="o">),</span>
+    <span class="n">Frankfurt</span><span class="o">(</span><span class="mf">50.078848</span><span class="o">,</span> <span class="mf">8.6349115</span><span class="o">),</span>
+    <span class="n">Munich</span>   <span class="o">(</span><span class="mf">48.166229</span><span class="o">,</span> <span class="mf">11.558089</span><span class="o">),</span>
+    <span class="n">Zurich</span>   <span class="o">(</span><span class="mf">47.383444</span><span class="o">,</span> <span class="mf">8.5254142</span><span class="o">),</span>
+    <span class="n">Tours</span>    <span class="o">(</span><span class="mf">47.413572</span><span class="o">,</span> <span class="mf">0.6810506</span><span class="o">),</span>
+    <span class="n">Lyon</span>     <span class="o">(</span><span class="mf">45.767122</span><span class="o">,</span> <span class="mf">4.8339568</span><span class="o">),</span>
+    <span class="n">Vienna</span>   <span class="o">(</span><span class="mf">48.224431</span><span class="o">,</span> <span class="mf">16.389240</span><span class="o">),</span>
+    <span class="n">Prague</span>   <span class="o">(</span><span class="mf">50.092396</span><span class="o">,</span> <span class="mf">14.436144</span><span class="o">),</span>
+    <span class="n">Krakow</span>   <span class="o">(</span><span class="mf">50.050363</span><span class="o">,</span> <span class="mf">19.928578</span><span class="o">),</span>
+    <span class="n">Warsaw</span>   <span class="o">(</span><span class="mf">52.254756</span><span class="o">,</span> <span class="mf">21.005968</span><span class="o">),</span>
+    <span class="n">Hamburg</span>  <span class="o">(</span><span class="mf">53.539699</span><span class="o">,</span> <span class="mf">9.9977143</span><span class="o">),</span>
+    <span class="n">Antwerp</span>  <span class="o">(</span><span class="mf">51.220613</span><span class="o">,</span> <span class="mf">4.3954882</span><span class="o">),</span>
+    <span class="n">Torino</span>   <span class="o">(</span><span class="mf">45.105321</span><span class="o">,</span> <span class="mf">7.6451957</span><span class="o">),</span>
+    <span class="n">Rome</span>     <span class="o">(</span><span class="mf">42.032845</span><span class="o">,</span> <span class="mf">12.390408</span><span class="o">);</span>
+
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Double</span> <span class="n">lat</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Double</span> <span class="n">lng</span><span class="o">;</span>
+
+    <span class="n">City</span><span class="o">(</span><span class="n">Double</span> <span class="n">lat</span><span class="o">,</span> <span class="n">Double</span> <span class="n">lng</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">lat</span> <span class="o">=</span> <span class="n">lat</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">lng</span> <span class="o">=</span> <span class="n">lng</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">getLat</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">lat</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">getLng</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">lng</span><span class="o">;</span> <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">kilometersTo</span><span class="o">(</span><span class="n">Coordinate</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">BikeAcrossEurope</span><span class="o">.</span><span class="na">kilometersBetween</span><span class="o">(</span><span class="n">lat</span><span class="o">,</span> <span class="n">lng</span><span class="o">,</span> <span class="n">other</span><span class="o">.</span><span class="na">getLat</span><span class="o">(),</span> <span class="n">other</span><span class="o">.</span><span class="na">getLng</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">City</span><span class="o">&gt;</span> <span class="nf">adjacentCities</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">List</span><span class="o">&lt;</span><span class="n">City</span><span class="o">&gt;</span> <span class="n">cities</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">City</span><span class="o">&gt;();</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Road</span> <span class="n">road</span> <span class="o">:</span> <span class="n">roads</span><span class="o">())</span>
+        <span class="n">cities</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">road</span><span class="o">.</span><span class="na">a</span> <span class="o">==</span> <span class="k">this</span> <span class="o">?</span> <span class="n">road</span><span class="o">.</span><span class="na">b</span> <span class="o">:</span> <span class="n">road</span><span class="o">.</span><span class="na">a</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">cities</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Road</span><span class="o">&gt;</span> <span class="nf">roads</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">List</span><span class="o">&lt;</span><span class="n">Road</span><span class="o">&gt;</span> <span class="n">roads</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Road</span><span class="o">&gt;();</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Road</span> <span class="n">road</span> <span class="o">:</span> <span class="n">all</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">road</span><span class="o">.</span><span class="na">a</span> <span class="o">==</span> <span class="k">this</span> <span class="o">||</span> <span class="n">road</span><span class="o">.</span><span class="na">b</span> <span class="o">==</span> <span class="k">this</span><span class="o">)</span>
+          <span class="n">roads</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">road</span><span class="o">);</span>
+      <span class="o">}</span>
+      <span class="k">return</span> <span class="n">roads</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Road</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">City</span> <span class="n">a</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">City</span> <span class="n">b</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">Double</span> <span class="n">distance</span><span class="o">;</span>
+
+    <span class="n">Road</span><span class="o">(</span><span class="n">City</span> <span class="n">a</span><span class="o">,</span> <span class="n">City</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&quot;Roads have to have two cities&quot;</span><span class="o">);</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">distance</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">kilometersTo</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">o</span> <span class="k">instanceof</span> <span class="n">Road</span> <span class="o">&amp;&amp;</span> <span class="o">((</span><span class="n">Road</span><span class="o">)</span> <span class="n">o</span><span class="o">).</span><span class="na">a</span> <span class="o">==</span> <span class="n">a</span>
+          <span class="o">&amp;&amp;</span> <span class="o">((</span><span class="n">Road</span><span class="o">)</span> <span class="n">o</span><span class="o">).</span><span class="na">b</span> <span class="o">==</span> <span class="n">b</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">())</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span>
+          <span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">()</span> <span class="o">:</span>
+          <span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">()).</span><span class="na">hashCode</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nd">@Override</span> <span class="n">String</span> <span class="n">toString</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; | &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; (&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%.0f&quot;</span><span class="o">,</span> <span class="n">distance</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot; km)&quot;</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Road</span> <span class="nf">between</span><span class="o">(</span><span class="n">City</span> <span class="n">a</span><span class="o">,</span> <span class="n">City</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Road</span> <span class="n">road</span> <span class="o">:</span> <span class="n">all</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span>   <span class="o">(</span><span class="n">road</span><span class="o">.</span><span class="na">a</span> <span class="o">==</span> <span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">road</span><span class="o">.</span><span class="na">b</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span>
+            <span class="o">||</span> <span class="o">(</span><span class="n">road</span><span class="o">.</span><span class="na">a</span> <span class="o">==</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">road</span><span class="o">.</span><span class="na">b</span> <span class="o">==</span> <span class="n">a</span><span class="o">)</span> <span class="o">)</span>
+          <span class="k">return</span> <span class="n">road</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">&quot;There is no road between&quot;</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; and &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">());</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Road</span><span class="o">&gt;</span> <span class="n">all</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Road</span><span class="o">&gt;()</span> <span class="o">{</span>
+  <span class="o">};</span>
+  <span class="kd">static</span> <span class="o">{</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Hamburg</span><span class="o">,</span>   <span class="n">City</span><span class="o">.</span><span class="na">Berlin</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Hamburg</span><span class="o">,</span>   <span class="n">City</span><span class="o">.</span><span class="na">Antwerp</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Hamburg</span><span class="o">,</span>   <span class="n">City</span><span class="o">.</span><span class="na">Frankfurt</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Berlin</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Warsaw</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Berlin</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Prague</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Antwerp</span><span class="o">,</span>   <span class="n">City</span><span class="o">.</span><span class="na">Paris</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Paris</span><span class="o">,</span>     <span class="n">City</span><span class="o">.</span><span class="na">Tours</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Paris</span><span class="o">,</span>     <span class="n">City</span><span class="o">.</span><span class="na">Lyon</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Paris</span><span class="o">,</span>     <span class="n">City</span><span class="o">.</span><span class="na">Zurich</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Paris</span><span class="o">,</span>     <span class="n">City</span><span class="o">.</span><span class="na">Frankfurt</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Frankfurt</span><span class="o">,</span> <span class="n">City</span><span class="o">.</span><span class="na">Prague</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Krakow</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Warsaw</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Krakow</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Prague</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Krakow</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Vienna</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Vienna</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Munich</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Vienna</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Prague</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Zurich</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Milan</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Lyon</span><span class="o">,</span>      <span class="n">City</span><span class="o">.</span><span class="na">Torino</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Torino</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Milan</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Torino</span><span class="o">,</span>    <span class="n">City</span><span class="o">.</span><span class="na">Rome</span><span class="o">));</span>
+    <span class="n">all</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Road</span><span class="o">(</span><span class="n">City</span><span class="o">.</span><span class="na">Milan</span><span class="o">,</span>     <span class="n">City</span><span class="o">.</span><span class="na">Rome</span><span class="o">));</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</body>
+</html>

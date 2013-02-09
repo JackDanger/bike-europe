@@ -77,8 +77,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <body>
 <h2></h2>
 
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sets</span> <span class="kn">import</span> <span class="n">Set</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">RADIANS</span> <span class="o">=</span> <span class="mi">180</span><span class="o">/</span><span class="mf">3.14169</span>
@@ -95,7 +94,6 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
     <span class="k">return</span> <span class="mi">6366</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span> <span class="o">+</span> <span class="n">t3</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">City</span><span class="p">:</span>
-
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lng</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lat</span>  <span class="o">=</span> <span class="n">lat</span>
@@ -106,7 +104,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
         <span class="k">return</span> <span class="n">kilometers_between</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lng</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">lng</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">roads</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">road</span><span class="p">:</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="o">==</span> <span class="bp">self</span> <span class="ow">or</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="o">==</span> <span class="bp">self</span><span class="p">,</span> <span class="n">Roads</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">road</span><span class="p">:</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="ow">is</span> <span class="bp">self</span> <span class="ow">or</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="ow">is</span> <span class="bp">self</span><span class="p">,</span> <span class="n">Roads</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">adjacent_cities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">road</span><span class="o">.</span><span class="n">the_city_opposite</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">roads</span><span class="p">()]</span>
@@ -117,31 +115,31 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 
 <span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;Roads must have two cities&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Roads must have two distinct cities&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">kilometers_to</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">the_city_opposite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">city</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">city</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">city</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
-        <span class="k">elif</span> <span class="n">city</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">city</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="s">&quot;#{city} isn&#39;t connected to #{self}&quot;</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s"> isn&#39;t connected to </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
 
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&quot;#{a} | #{b} (&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%.0f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; km)&quot;</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> - </span><span class="si">%s</span><span class="s"> (</span><span class="si">%.0f</span><span class="s">) km&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span>
 
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">between</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="n">Roads</span><span class="p">:</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="o">==</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="o">==</span> <span class="n">a</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="ow">is</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="ow">is</span> <span class="n">a</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">road</span>
-        <span class="k">raise</span> <span class="s">&quot;There is no road between &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; and &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;There is no road between </span><span class="si">%s</span><span class="s"> and </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 
 
 <span class="n">Berlin</span>    <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Berlin&#39;</span><span class="p">,</span>    <span class="mf">52.482668</span><span class="p">,</span> <span class="mf">13.359275</span><span class="p">)</span>
@@ -162,7 +160,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <span class="n">Rome</span>      <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="s">&#39;Rome&#39;</span><span class="p">,</span>      <span class="mf">42.032845</span><span class="p">,</span> <span class="mf">12.390408</span><span class="p">)</span>
 
 
-<span class="n">Roads</span> <span class="o">=</span> <span class="n">Set</span><span class="p">()</span>
+<span class="n">Roads</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Hamburg</span><span class="p">,</span>   <span class="n">Berlin</span><span class="p">))</span>
 <span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Hamburg</span><span class="p">,</span>   <span class="n">Antwerp</span><span class="p">))</span>
 <span class="n">Roads</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Road</span><span class="p">(</span><span class="n">Hamburg</span><span class="p">,</span>   <span class="n">Frankfurt</span><span class="p">))</span>
@@ -197,11 +195,10 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
         <span class="n">next_city</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">distance</span> <span class="o">=</span> <span class="n">Road</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">next_city</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span>
         <span class="n">total_distance</span> <span class="o">+=</span> <span class="n">distance</span>
-        <span class="k">print</span> <span class="n">city</span><span class="p">,</span> <span class="s">&quot; -&gt; &quot;</span><span class="p">,</span> <span class="n">next_city</span><span class="p">,</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%.0f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">distance</span><span class="p">),</span> <span class="s">&quot;km&quot;</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> - </span><span class="si">%s</span><span class="s"> (</span><span class="si">%.0f</span><span class="s">) km&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">next_city</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
 
 
-<span class="k">print</span> <span class="s">&quot;arrived in #{result.size} steps &quot;</span>
-<span class="k">print</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%.0f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">total_distance</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; km)&quot;</span>
+<span class="k">print</span> <span class="s">&quot;arrived in </span><span class="si">%d</span><span class="s"> steps (</span><span class="si">%.0f</span><span class="s"> km)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="n">total_distance</span><span class="p">)</span>
 <span class="k">print</span> <span class="s">&quot;&quot;</span>
 <span class="k">print</span> <span class="s">&quot;&quot;</span>
 </pre></div>
