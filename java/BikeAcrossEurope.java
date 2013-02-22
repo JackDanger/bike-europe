@@ -27,19 +27,6 @@ public class BikeAcrossEurope {
     System.out.println("found in " + path.size() + " steps (" + distance + " km)");
   }
 
-  static class Node {
-    City city;
-    double distance;
-    City prev;
-
-    public Node(City c, double d, City p) {
-      this.city = c;
-      this.distance = d;
-      this.prev = p;
-    }
-  }
-
-
   private static Double RADIANS = (180/3.14169);
 
   // Returns the distance between two geospatial coordinates in kilometers
