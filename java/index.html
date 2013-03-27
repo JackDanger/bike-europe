@@ -106,19 +106,6 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;found in &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; steps (&quot;</span> <span class="o">+</span> <span class="n">distance</span> <span class="o">+</span> <span class="s">&quot; km)&quot;</span><span class="o">);</span>
   <span class="o">}</span>
 
-  <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Node</span> <span class="o">{</span>
-    <span class="n">City</span> <span class="n">city</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">distance</span><span class="o">;</span>
-    <span class="n">City</span> <span class="n">prev</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">Node</span><span class="o">(</span><span class="n">City</span> <span class="n">c</span><span class="o">,</span> <span class="kt">double</span> <span class="n">d</span><span class="o">,</span> <span class="n">City</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">this</span><span class="o">.</span><span class="na">city</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
-      <span class="k">this</span><span class="o">.</span><span class="na">distance</span> <span class="o">=</span> <span class="n">d</span><span class="o">;</span>
-      <span class="k">this</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-
-
   <span class="kd">private</span> <span class="kd">static</span> <span class="n">Double</span> <span class="n">RADIANS</span> <span class="o">=</span> <span class="o">(</span><span class="mi">180</span><span class="o">/</span><span class="mf">3.14169</span><span class="o">);</span>
 
   <span class="c1">// Returns the distance between two geospatial coordinates in kilometers</span>
