@@ -21,10 +21,14 @@ public class BikeAcrossEurope {
      *******************************************/
 
 
-    for (City city : path) { System.out.println(city); }
-    int distance = BikeAcrossEurope.kilometersBetween(path);
+    if (path.size() == 0) {
+       System.out.println("Your list of cities is empty!");
+    } else {
+      for (City city : path) { System.out.println(city); }
+      int distance = BikeAcrossEurope.kilometersBetween(path);
+      System.out.println("found in " + path.size() + " steps (" + distance + " km)");
+    }
 
-    System.out.println("found in " + path.size() + " steps (" + distance + " km)");
   }
 
   private static Double RADIANS = (180/3.14169);
