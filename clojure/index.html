@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=latin1">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #808080 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0040D0 } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span class="p">(</span><span class="kd">ns </span><span class="nv">main.bike</span>
+  <span class="p">(</span><span class="ss">:import</span> <span class="p">(</span><span class="nf">java.util</span> <span class="nv">Date</span> <span class="nv">Timer</span> <span class="nv">Random</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="kd">defn </span><span class="nv">km-between</span> <span class="p">[</span><span class="nv">lat1</span> <span class="nv">lng1</span> <span class="nv">lat2</span> <span class="nv">lng2</span><span class="p">]</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">radians</span> <span class="p">(</span><span class="nb">/ </span><span class="mi">180</span> <span class="mf">3.14159</span><span class="p">)</span>
+        <span class="nv">a1</span> <span class="p">(</span><span class="nb">/ </span><span class="nv">lat1</span> <span class="nv">radians</span><span class="p">)</span> <span class="nv">a2</span> <span class="p">(</span><span class="nb">/ </span><span class="nv">lng1</span> <span class="nv">radians</span><span class="p">)</span>
+        <span class="nv">b1</span> <span class="p">(</span><span class="nb">/ </span><span class="nv">lat2</span> <span class="nv">radians</span><span class="p">)</span> <span class="nv">b2</span> <span class="p">(</span><span class="nb">/ </span><span class="nv">lng2</span> <span class="nv">radians</span><span class="p">)</span>
+        <span class="nv">t1</span> <span class="p">(</span><span class="nb">* </span><span class="p">(</span><span class="nf">Math/cos</span> <span class="nv">a1</span><span class="p">)</span> <span class="p">(</span><span class="nf">Math/cos</span> <span class="nv">a2</span><span class="p">)</span> <span class="p">(</span><span class="nf">Math/cos</span> <span class="nv">b1</span><span class="p">)</span> <span class="p">(</span><span class="nf">Math/cos</span> <span class="nv">b2</span><span class="p">))</span>
+        <span class="nv">t2</span> <span class="p">(</span><span class="nb">* </span><span class="p">(</span><span class="nf">Math/cos</span> <span class="nv">a1</span><span class="p">)</span> <span class="p">(</span><span class="nf">Math/sin</span> <span class="nv">a2</span><span class="p">)</span> <span class="p">(</span><span class="nf">Math/cos</span> <span class="nv">b1</span><span class="p">)</span> <span class="p">(</span><span class="nf">Math/sin</span> <span class="nv">b2</span><span class="p">))</span>
+        <span class="nv">t3</span> <span class="p">(</span><span class="nb">* </span><span class="p">(</span><span class="nf">Math/sin</span> <span class="nv">a1</span><span class="p">)</span> <span class="p">(</span><span class="nf">Math/sin</span> <span class="nv">b1</span><span class="p">))]</span>
+    <span class="p">(</span><span class="nb">* </span><span class="mi">6366</span> <span class="p">(</span><span class="nf">Math/cos</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">t1</span> <span class="nv">t2</span> <span class="nv">t3</span><span class="p">)))))</span>
+
+<span class="p">(</span><span class="k">def </span><span class="nv">roads</span> <span class="p">(</span><span class="nb">ref </span><span class="o">#</span><span class="p">{}))</span>
+
+<span class="p">(</span><span class="kd">defmacro </span><span class="nv">city</span> <span class="p">[</span><span class="nb">name </span><span class="nv">lat</span> <span class="nv">lng</span><span class="p">]</span>
+  <span class="o">`</span><span class="p">(</span><span class="k">def </span><span class="o">~</span><span class="nb">name </span><span class="p">(</span><span class="nb">hash-map </span><span class="ss">:name</span> <span class="o">~</span><span class="p">(</span><span class="nb">str </span><span class="nv">name</span><span class="p">)</span> <span class="ss">:lat</span> <span class="o">~</span><span class="nv">lat</span> <span class="ss">:lng</span> <span class="o">~</span><span class="nv">lng</span><span class="p">)))</span>
+<span class="p">(</span><span class="kd">defmacro </span><span class="nv">road</span> <span class="p">[</span><span class="nv">a</span> <span class="nv">b</span><span class="p">]</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">distance</span> <span class="o">`</span><span class="p">(</span><span class="nf">km-between</span> <span class="p">(</span><span class="ss">:lat</span> <span class="o">~</span><span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="ss">:lng</span> <span class="o">~</span><span class="nv">a</span><span class="p">)</span>
+                              <span class="p">(</span><span class="ss">:lat</span> <span class="o">~</span><span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="ss">:lng</span> <span class="o">~</span><span class="nv">b</span><span class="p">))]</span>
+  <span class="p">(</span><span class="nb">println </span><span class="s">&quot;building road between&quot;</span> <span class="nv">a</span> <span class="s">&quot;and&quot;</span> <span class="nv">b</span><span class="p">)</span>
+  <span class="o">`</span><span class="p">(</span><span class="nf">dosync</span>
+      <span class="p">(</span><span class="nb">ref-set </span><span class="nv">roads</span>
+               <span class="p">(</span><span class="nb">conj </span><span class="err">@</span><span class="nv">roads</span>
+                     <span class="p">(</span><span class="nb">hash-map </span><span class="ss">:a</span> <span class="o">~</span><span class="nv">a</span> <span class="ss">:b</span> <span class="o">~</span><span class="nv">b</span>
+                               <span class="ss">:distance</span> <span class="o">~</span><span class="nv">distance</span><span class="p">))))))</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Berlin</span>    <span class="mf">52.482668</span> <span class="mf">13.359275</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Paris</span>     <span class="mf">48.980405</span> <span class="mf">2.2851849</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Milan</span>     <span class="mf">45.520543</span> <span class="mf">9.1419459</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Frankfurt</span> <span class="mf">50.078848</span> <span class="mf">8.6349115</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Munich</span>    <span class="mf">48.166229</span> <span class="mf">11.558089</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Zurich</span>    <span class="mf">47.383444</span> <span class="mf">8.5254142</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Tours</span>     <span class="mf">47.413572</span> <span class="mf">0.6810506</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Lyon</span>      <span class="mf">45.767122</span> <span class="mf">4.8339568</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Vienna</span>    <span class="mf">48.224431</span> <span class="mf">16.389240</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Prague</span>    <span class="mf">50.092396</span> <span class="mf">14.436144</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Krakow</span>    <span class="mf">50.050363</span> <span class="mf">19.928578</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Warsaw</span>    <span class="mf">52.254756</span> <span class="mf">21.005968</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Hamburg</span>   <span class="mf">53.539699</span> <span class="mf">9.9977143</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Antwerp</span>   <span class="mf">51.220613</span> <span class="mf">4.3954882</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Torino</span>    <span class="mf">45.105321</span> <span class="mf">7.6451957</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">city</span> <span class="nv">Rome</span>      <span class="mf">42.032845</span> <span class="mf">12.390408</span><span class="p">)</span>
+
+<span class="p">(</span><span class="kd">defn </span><span class="nv">opposite</span> <span class="p">[</span><span class="nv">road</span> <span class="nv">city</span><span class="p">]</span>
+  <span class="s">&quot;Find the city on the other end of the road from the city provided&quot;</span>
+  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">city</span> <span class="p">(</span><span class="ss">:a</span> <span class="nv">road</span><span class="p">))</span> <span class="p">(</span><span class="ss">:b</span> <span class="nv">road</span><span class="p">)</span> <span class="p">(</span><span class="ss">:a</span> <span class="nv">road</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="kd">defn </span><span class="nv">between</span> <span class="p">[</span><span class="nv">city_a</span> <span class="nv">city_b</span><span class="p">]</span>
+  <span class="s">&quot;Find the road that connects two cities&quot;</span>
+  <span class="p">(</span><span class="nb">some </span><span class="o">#</span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="ss">:a</span> <span class="nv">%</span><span class="p">)</span> <span class="nv">city_a</span><span class="p">)</span> <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="ss">:b</span> <span class="nv">%</span><span class="p">)</span> <span class="nv">city_b</span><span class="p">))</span>
+                 <span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="ss">:b</span> <span class="nv">%</span><span class="p">)</span> <span class="nv">city_a</span><span class="p">)</span> <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="ss">:a</span> <span class="nv">%</span><span class="p">)</span> <span class="nv">city_b</span><span class="p">)))</span> <span class="nv">%</span><span class="p">)</span> <span class="err">@</span><span class="nv">roads</span><span class="p">))</span>
+
+<span class="c1">;class Road</span>
+<span class="c1">;</span>
+<span class="c1">;  require &#39;set&#39;</span>
+<span class="c1">;  ALL = Set.new</span>
+<span class="c1">;</span>
+<span class="c1">;  attr_reader :a, :b, :distance</span>
+<span class="c1">;</span>
+<span class="c1">;  def initialize(a, b)</span>
+<span class="c1">;    raise &quot;Roads must have two cities&quot; if a == b</span>
+<span class="c1">;    @a = a</span>
+<span class="c1">;    @b = b</span>
+<span class="c1">;    @distance = a.kilometers_to(b)</span>
+<span class="c1">;  end</span>
+<span class="c1">;</span>
+<span class="c1">;  def the_city_opposite(city)</span>
+<span class="c1">;    raise &quot;#{city} isn&#39;t connected to #{self}&quot; unless a == city || b == city</span>
+<span class="c1">;    city == a ? b : a</span>
+<span class="c1">;  end</span>
+<span class="c1">;</span>
+<span class="c1">;  def to_s</span>
+<span class="c1">;    &quot;#{a} | #{b} (#{&quot;%.0f&quot; % distance} km)&quot;</span>
+<span class="c1">;  end</span>
+<span class="c1">;</span>
+<span class="c1">;  def self.between(a, b)</span>
+<span class="c1">;    ALL.detect do |road|</span>
+<span class="c1">;      return road if (road.a == a &amp;&amp; road.b == b) || (road.a == b &amp;&amp; road.b == a)</span>
+<span class="c1">;    end</span>
+<span class="c1">;    raise &quot;There is no road between &quot; + a.to_s + &quot; and &quot; + b.to_s</span>
+<span class="c1">;  end</span>
+<span class="c1">;</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Hamburg</span>   <span class="nv">Berlin</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Hamburg</span>   <span class="nv">Antwerp</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Hamburg</span>   <span class="nv">Frankfurt</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Berlin</span>    <span class="nv">Warsaw</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Berlin</span>    <span class="nv">Prague</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Antwerp</span>   <span class="nv">Paris</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Paris</span>     <span class="nv">Tours</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Paris</span>     <span class="nv">Lyon</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Paris</span>     <span class="nv">Zurich</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Paris</span>     <span class="nv">Frankfurt</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Frankfurt</span> <span class="nv">Prague</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Krakow</span>    <span class="nv">Warsaw</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Krakow</span>    <span class="nv">Prague</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Krakow</span>    <span class="nv">Vienna</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Vienna</span>    <span class="nv">Munich</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Vienna</span>    <span class="nv">Prague</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Zurich</span>    <span class="nv">Milan</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Lyon</span>      <span class="nv">Torino</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Torino</span>    <span class="nv">Milan</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Torino</span>    <span class="nv">Rome</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">road</span> <span class="nv">Milan</span>     <span class="nv">Rome</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nf">between</span> <span class="nv">Milan</span> <span class="nv">Rome</span><span class="p">))</span>
+<span class="c1">;end</span>
+<span class="c1">;</span>
+<span class="c1">;Start = City::Rome</span>
+<span class="c1">;End   = City::Berlin</span>
+<span class="c1">;</span>
+<span class="c1">;result = [] # make a list of cities from Rome to Berlin</span>
+<span class="c1">;</span>
+<span class="c1">;total_distance = 0</span>
+<span class="c1">;result.each_with_index do |city, idx|</span>
+<span class="c1">;  print city</span>
+<span class="c1">;  if next_city = result[idx+1]</span>
+<span class="c1">;    distance = Road.between(city, next_city).distance</span>
+<span class="c1">;    total_distance += distance</span>
+<span class="c1">;    puts &quot; -&gt; #{&quot;%.0f&quot; % distance}&quot;</span>
+<span class="c1">;  end</span>
+<span class="c1">;end</span>
+<span class="c1">;print &quot;arrived in #{result.size} steps &quot;</span>
+<span class="c1">;print &quot;(#{&quot;%.0f&quot; % total_distance} km)&quot;</span>
+<span class="c1">;puts &quot;&quot;</span>
+<span class="c1">;puts &quot;&quot;</span>
+</pre></div>
+</body>
+</html>
