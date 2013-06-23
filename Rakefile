@@ -4,6 +4,16 @@ task :publish => :build do
   `git push github HEAD:gh-pages`
 end
 
+desc "package go"
+task :go do
+  `pygmentize -f html -l go -O full -o go/index.html go/bike.go`
+end
+
+desc "package clojure"
+task :clojure do
+  `pygmentize -f html -l clojure -O full -o clojure/index.html clojure/bike.clj`
+end
+
 desc "package java"
 task :java do
   `pygmentize -f html -l java -O full -o java/index.html java/BikeAcrossEurope.java`
@@ -26,6 +36,10 @@ end
 
 desc "build all languages"
 task :build => [:java,
+                :clojure,
+                :go,
                 :python,
                 :ruby,
                 :javascript]
+
+task :default => :build
