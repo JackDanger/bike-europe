@@ -139,15 +139,6 @@ public class BikeAcrossEurope {
     public @Override String toString() {
       return a.name() + " | " + b.name() + " (" + String.format("%.0f", distance) + " km)";
     }
-
-    public static Road between(City a, City b) {
-      for (Road road : all) {
-        if (   (road.a == a && road.b == b)
-            || (road.a == b && road.b == a) )
-          return road;
-      }
-      throw new RuntimeException("There is no road between" + a.name() + " and " + b.name());
-    }
   }
 
 

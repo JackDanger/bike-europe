@@ -218,15 +218,6 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
     <span class="kd">public</span> <span class="nd">@Override</span> <span class="n">String</span> <span class="n">toString</span><span class="o">()</span> <span class="o">{</span>
       <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; | &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; (&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%.0f&quot;</span><span class="o">,</span> <span class="n">distance</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot; km)&quot;</span><span class="o">;</span>
     <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Road</span> <span class="nf">between</span><span class="o">(</span><span class="n">City</span> <span class="n">a</span><span class="o">,</span> <span class="n">City</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">for</span> <span class="o">(</span><span class="n">Road</span> <span class="n">road</span> <span class="o">:</span> <span class="n">all</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span>   <span class="o">(</span><span class="n">road</span><span class="o">.</span><span class="na">a</span> <span class="o">==</span> <span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">road</span><span class="o">.</span><span class="na">b</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span>
-            <span class="o">||</span> <span class="o">(</span><span class="n">road</span><span class="o">.</span><span class="na">a</span> <span class="o">==</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">road</span><span class="o">.</span><span class="na">b</span> <span class="o">==</span> <span class="n">a</span><span class="o">)</span> <span class="o">)</span>
-          <span class="k">return</span> <span class="n">road</span><span class="o">;</span>
-      <span class="o">}</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">&quot;There is no road between&quot;</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; and &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">());</span>
-    <span class="o">}</span>
   <span class="o">}</span>
 
 
