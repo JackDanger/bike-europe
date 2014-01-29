@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=latin1">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+<span class="kn">import</span> <span class="s">&quot;math&quot;</span>
+
+<span class="kd">func</span> <span class="nx">kilometersBetween</span><span class="p">(</span><span class="nx">lat1</span><span class="p">,</span> <span class="nx">lng1</span><span class="p">,</span> <span class="nx">lat2</span><span class="p">,</span> <span class="nx">lng2</span> <span class="kt">float64</span><span class="p">)</span> <span class="kt">float64</span> <span class="p">{</span>
+	<span class="nx">radians</span> <span class="o">:=</span> <span class="mi">180</span> <span class="o">/</span> <span class="mf">3.14169</span>
+
+	<span class="nx">a1</span> <span class="o">:=</span> <span class="nx">lat1</span> <span class="o">/</span> <span class="nx">radians</span>
+	<span class="nx">a2</span> <span class="o">:=</span> <span class="nx">lng1</span> <span class="o">/</span> <span class="nx">radians</span>
+	<span class="nx">b1</span> <span class="o">:=</span> <span class="nx">lat2</span> <span class="o">/</span> <span class="nx">radians</span>
+	<span class="nx">b2</span> <span class="o">:=</span> <span class="nx">lng2</span> <span class="o">/</span> <span class="nx">radians</span>
+
+	<span class="nx">t1</span> <span class="o">:=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Cos</span><span class="p">(</span><span class="nx">a1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Cos</span><span class="p">(</span><span class="nx">a2</span><span class="p">)</span> <span class="o">*</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Cos</span><span class="p">(</span><span class="nx">b1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Cos</span><span class="p">(</span><span class="nx">b2</span><span class="p">)</span>
+	<span class="nx">t2</span> <span class="o">:=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Cos</span><span class="p">(</span><span class="nx">a1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Sin</span><span class="p">(</span><span class="nx">a2</span><span class="p">)</span> <span class="o">*</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Cos</span><span class="p">(</span><span class="nx">b1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Sin</span><span class="p">(</span><span class="nx">b2</span><span class="p">)</span>
+	<span class="nx">t3</span> <span class="o">:=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Sin</span><span class="p">(</span><span class="nx">a1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Sin</span><span class="p">(</span><span class="nx">b1</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="mi">6366</span> <span class="o">*</span> <span class="nx">math</span><span class="p">.</span><span class="nx">Acos</span><span class="p">(</span><span class="nx">t1</span><span class="o">+</span><span class="nx">t2</span><span class="o">+</span><span class="nx">t3</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">City</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">name</span> <span class="kt">string</span>
+	<span class="nx">lat</span>  <span class="kt">float64</span>
+	<span class="nx">lng</span>  <span class="kt">float64</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">self</span> <span class="nx">City</span><span class="p">)</span> <span class="nx">kilometersTo</span><span class="p">(</span><span class="nx">other</span> <span class="nx">City</span><span class="p">)</span> <span class="kt">float64</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">kilometersBetween</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">lng</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">lng</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;start&quot;</span><span class="p">)</span>
+	<span class="nx">Berlin</span> <span class="o">:=</span> <span class="nx">City</span><span class="p">{</span><span class="s">&quot;Berlin&quot;</span><span class="p">,</span> <span class="mf">52.482668</span><span class="p">,</span> <span class="mf">13.359275</span><span class="p">}</span>
+	<span class="nx">Paris</span> <span class="o">:=</span> <span class="nx">City</span><span class="p">{</span><span class="s">&quot;Paris&quot;</span><span class="p">,</span> <span class="mf">48.980405</span><span class="p">,</span> <span class="mf">2.2851849</span><span class="p">}</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Berlin</span><span class="p">.</span><span class="nx">kilometersTo</span><span class="p">(</span><span class="nx">Paris</span><span class="p">))</span>
+
+
+
+
+	<span class="c1">//totalDistance := 0</span>
+	<span class="c1">//for idx, city in enumerate(result):</span>
+	<span class="c1">//    if idx &lt; len(result) - 1:</span>
+	<span class="c1">//        next_city = result[idx+1]</span>
+	<span class="c1">//        distance = Road.between(city, next_city).distance</span>
+	<span class="c1">//        total_distance += distance</span>
+	<span class="c1">//        print &quot;%s - %s (%.0f) km&quot; % (city, next_city, distance)</span>
+
+	<span class="c1">//fmt.Println(&quot;arrived in %d steps (%.0f km)&quot; % (len(result), total_distance)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+
+<span class="p">}</span>
+
+<span class="c1">//class City:</span>
+<span class="c1">//    def __init__(self, name, lat, lng):</span>
+<span class="c1">//        self.name = name</span>
+<span class="c1">//        self.lat  = lat</span>
+<span class="c1">//        self.lng  = lng</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//    def kilometers_to(self, other):</span>
+<span class="c1">//        return kilometers_between(self.lat, self.lng, other.lat, other.lng)</span>
+<span class="c1">//</span>
+<span class="c1">//    def roads(self):</span>
+<span class="c1">//        return filter(lambda road:road.a is self or road.b is self, Roads)</span>
+<span class="c1">//</span>
+<span class="c1">//    def adjacent_cities(self):</span>
+<span class="c1">//        return [road.the_city_opposite(self) for road in self.roads()]</span>
+<span class="c1">//</span>
+<span class="c1">//    def __repr__(self):</span>
+<span class="c1">//        return self.name</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//class Road:</span>
+<span class="c1">//    def __init__(self, a, b):</span>
+<span class="c1">//        if a is b:</span>
+<span class="c1">//            raise Exception(&quot;Roads must have two distinct cities&quot;)</span>
+<span class="c1">//        self.a = a</span>
+<span class="c1">//        self.b = b</span>
+<span class="c1">//        self.distance = a.kilometers_to(b)</span>
+<span class="c1">//</span>
+<span class="c1">//    def the_city_opposite(self, city):</span>
+<span class="c1">//        if city is self.a:</span>
+<span class="c1">//            return self.b</span>
+<span class="c1">//        elif city is self.b:</span>
+<span class="c1">//            return self.a</span>
+<span class="c1">//        else:</span>
+<span class="c1">//            raise Exception(&quot;%s isn&#39;t connected to %s&quot; % (city, self))</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//    def __repr__(self):</span>
+<span class="c1">//        return &quot;%s - %s (%.0f) km&quot; % (a, b, self.distance)</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//    @staticmethod</span>
+<span class="c1">//    def between(a, b):</span>
+<span class="c1">//        for road in Roads:</span>
+<span class="c1">//            if (road.a is a and road.b is b) or (road.a is b and road.b is a):</span>
+<span class="c1">//                return road</span>
+<span class="c1">//        raise Exception(&quot;There is no road between %s and %s&quot; % (a, b))</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//Berlin    = City(&#39;Berlin&#39;,    52.482668, 13.359275)</span>
+<span class="c1">//Paris     = City(&#39;Paris&#39;,     48.980405, 2.2851849)</span>
+<span class="c1">//Milan     = City(&#39;Milan&#39;,     45.520543, 9.1419459)</span>
+<span class="c1">//Frankfurt = City(&#39;Frankfurt&#39;, 50.078848, 8.6349115)</span>
+<span class="c1">//Munich    = City(&#39;Munich&#39;,    48.166229, 11.558089)</span>
+<span class="c1">//Zurich    = City(&#39;Zurich&#39;,    47.383444, 8.5254142)</span>
+<span class="c1">//Tours     = City(&#39;Tours&#39;,     47.413572, 0.6810506)</span>
+<span class="c1">//Lyon      = City(&#39;Lyon&#39;,      45.767122, 4.8339568)</span>
+<span class="c1">//Vienna    = City(&#39;Vienna&#39;,    48.224431, 16.389240)</span>
+<span class="c1">//Prague    = City(&#39;Prague&#39;,    50.092396, 14.436144)</span>
+<span class="c1">//Krakow    = City(&#39;Krakow&#39;,    50.050363, 19.928578)</span>
+<span class="c1">//Warsaw    = City(&#39;Warsaw&#39;,    52.254756, 21.005968)</span>
+<span class="c1">//Hamburg   = City(&#39;Hamburg&#39;,   53.539699, 9.9977143)</span>
+<span class="c1">//Antwerp   = City(&#39;Antwerp&#39;,   51.220613, 4.3954882)</span>
+<span class="c1">//Torino    = City(&#39;Torino&#39;,    45.105321, 7.6451957)</span>
+<span class="c1">//Rome      = City(&#39;Rome&#39;,      42.032845, 12.390408)</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//Roads = set()</span>
+<span class="c1">//Roads.add(Road(Hamburg,   Berlin))</span>
+<span class="c1">//Roads.add(Road(Hamburg,   Antwerp))</span>
+<span class="c1">//Roads.add(Road(Hamburg,   Frankfurt))</span>
+<span class="c1">//Roads.add(Road(Berlin,    Warsaw))</span>
+<span class="c1">//Roads.add(Road(Berlin,    Prague))</span>
+<span class="c1">//Roads.add(Road(Antwerp,   Paris))</span>
+<span class="c1">//Roads.add(Road(Paris,     Tours))</span>
+<span class="c1">//Roads.add(Road(Paris,     Lyon))</span>
+<span class="c1">//Roads.add(Road(Paris,     Zurich))</span>
+<span class="c1">//Roads.add(Road(Paris,     Frankfurt))</span>
+<span class="c1">//Roads.add(Road(Frankfurt, Prague))</span>
+<span class="c1">//Roads.add(Road(Krakow,    Warsaw))</span>
+<span class="c1">//Roads.add(Road(Krakow,    Prague))</span>
+<span class="c1">//Roads.add(Road(Krakow,    Vienna))</span>
+<span class="c1">//Roads.add(Road(Vienna,    Munich))</span>
+<span class="c1">//Roads.add(Road(Vienna,    Prague))</span>
+<span class="c1">//Roads.add(Road(Zurich,    Milan))</span>
+<span class="c1">//Roads.add(Road(Lyon,      Torino))</span>
+<span class="c1">//Roads.add(Road(Torino,    Milan))</span>
+<span class="c1">//Roads.add(Road(Torino,    Rome))</span>
+<span class="c1">//Roads.add(Road(Milan,     Rome))</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//Start = Rome</span>
+<span class="c1">//End   = Berlin</span>
+</pre></div>
+</body>
+</html>
