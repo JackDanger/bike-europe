@@ -1,5 +1,6 @@
 import math
 import random
+import sys
 
 RADIANS = 180/3.14169
 def kilometers_between(lat1, lng1, lat2, lng2):
@@ -48,7 +49,7 @@ class Road:
         elif city is self.b:
             return self.a
         else:
-            raise Exception("%s isn't connected to %s" % (city, self))
+            raise Exception("You tried going from % to % but there's no road!" % (self, city))
 
 
     def __repr__(self):
@@ -108,18 +109,39 @@ Roads.add(Road(Milan,     Rome))
 Start = Rome
 End   = Berlin
 
-result = [] # make a list of cities from Rome to Berlin
-
-total_distance = 0
-for idx, city in enumerate(result):
-    if idx < len(result) - 1:
-        next_city = result[idx+1]
-        distance = Road.between(city, next_city).distance
-        total_distance += distance
-        print "%s - %s (%.0f) km" % (city, next_city, distance)
+#
+# Write your code here
+#
+itinerary = [] # make a list of cities from Rome to Berlin
 
 
-print "arrived in %d steps (%.0f km)" % (len(result), total_distance)
-print ""
-print ""
+
+#
+# Let's see how you did
+#
+if __name__ == '__main__':
+
+    total_distance = 0
+
+    if len(itinerary) == 0:
+      print "Not done yet!"
+      print "You need the 'itinerary' variable to be a list of cities"
+      sys.exit(1)
+
+    if itinerary[0] is not Start or itinerary[-1] is not End:
+      print "Not done yet!"
+      print "You need the 'itinerary' variable to start with Rome and end with Berlin"
+      sys.exit(1)
+
+    for idx, city in enumerate(itinerary):
+        if idx < len(itinerary) - 1:
+            next_city = itinerary[idx+1]
+            distance = Road.between(city, next_city).distance
+            total_distance += distance
+            print "%s - %s (%.0f) km" % (city, next_city, distance)
+
+
+    print "arrived in %d steps (%.0f km)" % (len(itinerary), total_distance)
+    print ""
+    print ""
 
