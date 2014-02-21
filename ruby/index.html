@@ -162,7 +162,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
     <span class="no">ALL</span><span class="o">.</span><span class="n">detect</span> <span class="k">do</span> <span class="o">|</span><span class="n">road</span><span class="o">|</span>
       <span class="k">return</span> <span class="n">road</span> <span class="k">if</span> <span class="p">(</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="o">==</span> <span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">road</span><span class="o">.</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">road</span><span class="o">.</span><span class="n">b</span> <span class="o">==</span> <span class="n">a</span><span class="p">)</span>
     <span class="k">end</span>
-    <span class="k">raise</span> <span class="s2">&quot;There is no road between &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">to_s</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="n">to_s</span>
+    <span class="k">raise</span> <span class="s2">&quot;You tried going from </span><span class="si">#{</span><span class="n">a</span><span class="si">}</span><span class="s2"> to </span><span class="si">#{</span><span class="n">b</span><span class="si">}</span><span class="s2"> but there&#39;s no road!&quot;</span>
   <span class="k">end</span>
 
   <span class="no">ALL</span><span class="o">.</span><span class="n">add</span> <span class="kp">new</span><span class="p">(</span><span class="ss">City</span><span class="p">:</span><span class="ss">:Hamburg</span><span class="p">,</span>   <span class="ss">City</span><span class="p">:</span><span class="ss">:Berlin</span><span class="p">)</span>
@@ -193,24 +193,25 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 
 
 <span class="c1"># Make a list of cities from Rome to Berlin</span>
-<span class="n">result</span> <span class="o">=</span> <span class="o">[]</span> <span class="c1"># &lt;-- your code goes here!!!!</span>
+<span class="n">itinerary</span> <span class="o">=</span> <span class="o">[]</span> <span class="c1"># &lt;-- your code goes here!!!!</span>
 
 
-<span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">first</span> <span class="o">!=</span> <span class="no">Start</span> <span class="o">||</span> <span class="n">result</span><span class="o">.</span><span class="n">last</span> <span class="o">!=</span> <span class="no">End</span>
+<span class="c1"># Let&#39;s see how you did!</span>
+<span class="k">if</span> <span class="n">itinerary</span><span class="o">.</span><span class="n">first</span> <span class="o">!=</span> <span class="no">Start</span> <span class="o">||</span> <span class="n">itinerary</span><span class="o">.</span><span class="n">last</span> <span class="o">!=</span> <span class="no">End</span>
   <span class="nb">puts</span> <span class="s2">&quot;Not done yet!&quot;</span>
-  <span class="nb">puts</span> <span class="s2">&quot;You need the &#39;result&#39; variable to be a list of cities&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;You need the &#39;itinerary&#39; variable to be a list of cities&quot;</span>
   <span class="nb">exit</span> <span class="mi">1</span>
 <span class="k">end</span>
 <span class="n">total_distance</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">result</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">city</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
+<span class="n">itinerary</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">city</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
   <span class="nb">print</span> <span class="n">city</span>
-  <span class="k">if</span> <span class="n">next_city</span> <span class="o">=</span> <span class="n">result</span><span class="o">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span>
+  <span class="k">if</span> <span class="n">next_city</span> <span class="o">=</span> <span class="n">itinerary</span><span class="o">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span>
     <span class="n">distance</span> <span class="o">=</span> <span class="no">Road</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">next_city</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span>
     <span class="n">total_distance</span> <span class="o">+=</span> <span class="n">distance</span>
     <span class="nb">puts</span> <span class="s2">&quot; -&gt; </span><span class="si">#{</span><span class="s2">&quot;%.0f&quot;</span> <span class="o">%</span> <span class="n">distance</span><span class="si">}</span><span class="s2">&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span>
-<span class="nb">print</span> <span class="s2">&quot;arrived in </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> steps &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;arrived in </span><span class="si">#{</span><span class="n">itinerary</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> steps &quot;</span>
 <span class="nb">print</span> <span class="s2">&quot;(</span><span class="si">#{</span><span class="s2">&quot;%.0f&quot;</span> <span class="o">%</span> <span class="n">total_distance</span><span class="si">}</span><span class="s2"> km)&quot;</span>
 <span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
 <span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
