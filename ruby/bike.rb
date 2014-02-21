@@ -83,7 +83,7 @@ class Road
     ALL.detect do |road|
       return road if (road.a == a && road.b == b) || (road.a == b && road.b == a)
     end
-    raise "There is no road between " + a.to_s + " and " + b.to_s
+    raise "You tried going from #{a} to #{b} but there's no road!"
   end
 
   ALL.add new(City::Hamburg,   City::Berlin)
@@ -114,24 +114,25 @@ End   = City::Berlin
 
 
 # Make a list of cities from Rome to Berlin
-result = [] # <-- your code goes here!!!!
+itinerary = [] # <-- your code goes here!!!!
 
 
-if result.first != Start || result.last != End
+# Let's see how you did!
+if itinerary.first != Start || itinerary.last != End
   puts "Not done yet!"
-  puts "You need the 'result' variable to be a list of cities"
+  puts "You need the 'itinerary' variable to be a list of cities"
   exit 1
 end
 total_distance = 0
-result.each_with_index do |city, idx|
+itinerary.each_with_index do |city, idx|
   print city
-  if next_city = result[idx+1]
+  if next_city = itinerary[idx+1]
     distance = Road.between(city, next_city).distance
     total_distance += distance
     puts " -> #{"%.0f" % distance}"
   end
 end
-print "arrived in #{result.size} steps "
+print "arrived in #{itinerary.size} steps "
 print "(#{"%.0f" % total_distance} km)"
 puts ""
 puts ""
