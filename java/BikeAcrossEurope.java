@@ -25,7 +25,9 @@ public class BikeAcrossEurope {
        System.out.println("Your list of cities is empty!");
     } else {
       for (City city : path) { System.out.println(city); }
-      int distance = BikeAcrossEurope.kilometersBetween(path);
+      int distance = 0;
+      for (int i = 0; i < path.size() - 1; i++)
+        distance += path.get(i).kilometersTo(path.get(i+1));
       System.out.println("found in " + path.size() + " steps (" + distance + " km)");
     }
 
@@ -45,13 +47,6 @@ public class BikeAcrossEurope {
     Double t3 = Math.sin(a1) * Math.sin(b1);
 
     return 6366 * Math.acos(t1 + t2 + t3);
-  }
-
-  public static int kilometersBetween(List<City> cities) {
-    int distance = 0;
-    for (int i = 0; i < cities.size() - 1; i++)
-      distance += cities.get(i).kilometersTo(cities.get(i+1));
-    return distance;
   }
 
   public interface Coordinate {
@@ -142,8 +137,7 @@ public class BikeAcrossEurope {
   }
 
 
-  public static Set<Road> all = new HashSet<Road>() {
-  };
+  public static Set<Road> all = new HashSet<Road>() { };
   static {
     all.add(new Road(City.Hamburg,   City.Berlin));
     all.add(new Road(City.Hamburg,   City.Antwerp));
