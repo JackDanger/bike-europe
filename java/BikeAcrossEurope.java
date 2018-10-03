@@ -152,6 +152,7 @@ public class BikeAcrossEurope {
     all.add(new Road(City.Berlin,    City.Prague));
     all.add(new Road(City.Antwerp,   City.Paris));
     all.add(new Road(City.Paris,     City.Tours));
+    all.add(new Road(City.Tours,     City.Lyon));
     all.add(new Road(City.Paris,     City.Lyon));
     all.add(new Road(City.Paris,     City.Zurich));
     all.add(new Road(City.Paris,     City.Frankfurt));
